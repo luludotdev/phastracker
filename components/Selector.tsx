@@ -1,9 +1,11 @@
 import { FC, useCallback } from 'react'
 import { Evidence } from '~data/evidence'
+import { useData } from '~hooks/useData'
 import { useStore } from '~hooks/useStore'
 
 export const Selector: FC = () => {
   const { state, dispatch } = useStore()
+  const { enabledEvidence } = useData()
 
   const setConfirmed = useCallback(
     (evidence: Evidence, value: boolean) => {
@@ -37,7 +39,11 @@ export const Selector: FC = () => {
               <input
                 type='checkbox'
                 checked={state.confirmed.get(evidence)}
-                disabled={state.ruledOut.get(evidence)}
+                disabled={
+                  // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
+                  state.ruledOut.get(evidence) ||
+                  enabledEvidence.includes(evidence) === false
+                }
                 onChange={() =>
                   setConfirmed(evidence, !state.confirmed.get(evidence))
                 }

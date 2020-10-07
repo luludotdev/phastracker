@@ -14,6 +14,7 @@ export interface IRow extends IGhost {
 
 interface IReturn {
   ghosts: readonly IRow[]
+  enabledEvidence: Evidence[]
 }
 
 export const useData: () => IReturn = () => {
@@ -23,7 +24,7 @@ export const useData: () => IReturn = () => {
   const noConfirmed = [...state.confirmed.values()].every(x => x === false)
   const noRuledOut = [...state.ruledOut.values()].every(x => x === false)
   if (noConfirmed === true && noRuledOut === true) {
-    return { ghosts: rows }
+    return { ghosts: rows, enabledEvidence: Object.values(Evidence) }
   }
 
   let evidenceOptions: Evidence[] = []
@@ -49,5 +50,5 @@ export const useData: () => IReturn = () => {
     }
   }
 
-  return { ghosts: rows }
+  return { ghosts: rows, enabledEvidence: [...new Set([...evidenceOptions])] }
 }
