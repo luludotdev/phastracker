@@ -1,12 +1,15 @@
 import { NextPage } from 'next'
 import Head from 'next/head'
+import { Table } from '../components/table'
 
 const App: NextPage = () => (
   <>
     <Head>
-      <title>Root Page</title>
+      <title>Phastracker</title>
     </Head>
-    <div>Root Page</div>
+    <div>
+      <Table />
+    </div>
   </>
 )
 
