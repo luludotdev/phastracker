@@ -7,8 +7,8 @@ import React, {
 import { Evidence } from '~data/evidence'
 
 interface IState {
-  confirmed: Evidence[]
-  ruledOut: Evidence[]
+  confirmed: Map<Evidence, boolean>
+  ruledOut: Map<Evidence, boolean>
 }
 
 interface IContext {
@@ -17,8 +17,8 @@ interface IContext {
 }
 
 const initialState: IState = {
-  confirmed: [],
-  ruledOut: [],
+  confirmed: new Map(Object.values(Evidence).map(x => [x, false])),
+  ruledOut: new Map(Object.values(Evidence).map(x => [x, false])),
 }
 
 // @ts-expect-error
@@ -55,10 +55,12 @@ export const Provider: FunctionComponent = ({ children }) => {
 }
 
 const setEvidence: (
-  prev: Evidence[],
+  prev: Map<Evidence, boolean>,
   type: Evidence,
   value: boolean
-) => Evidence[] = (previous, type, value) => {
-  // TODO: Write this lmao
-  return previous
+) => Map<Evidence, boolean> = (previous, type, value) => {
+  const clone = new Map([...previous.entries()])
+  clone.set(type, value)
+
+  return clone
 }
