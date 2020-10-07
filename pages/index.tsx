@@ -1,6 +1,6 @@
 import { NextPage } from 'next'
 import Head from 'next/head'
-import { Table } from '../components/table'
+import { Table } from '../components/Table'
 
 const App: NextPage = () => (
   <>
