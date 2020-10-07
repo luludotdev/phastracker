@@ -1,6 +1,6 @@
-import { FC } from 'react'
-import { Evidence } from '../data/evidence'
-import { IGhost } from '../data/ghosts'
+import React, { FC } from 'react'
+import { Evidence } from '~data/evidence'
+import { IGhost } from '~data/ghosts'
 
 interface IProps {
   ghost: IGhost

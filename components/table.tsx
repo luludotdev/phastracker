@@ -1,6 +1,6 @@
-import { FC } from 'react'
-import { Row } from '../components/row'
-import { ghosts } from '../data/ghosts'
+import React, { FC } from 'react'
+import { ghosts } from '~data/ghosts'
+import { Row } from './row'
 
 export const Table: FC = () => (
   <table>
