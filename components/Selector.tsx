@@ -2,8 +2,9 @@ import { FC, useCallback } from 'react'
 import { Evidence } from '~data/evidence'
 import { useData } from '~hooks/useData'
 import { useStore } from '~hooks/useStore'
+import type { IStyledProps } from '~utils/styledProps'
 
-export const Selector: FC = () => {
+export const Selector: FC<IStyledProps> = ({ className, style }) => {
   const { state, dispatch } = useStore()
   const { enabledEvidence } = useData()
 
@@ -22,7 +23,7 @@ export const Selector: FC = () => {
   )
 
   return (
-    <table>
+    <table className={className} style={style}>
       <thead>
         <tr>
           <th>Evidence</th>

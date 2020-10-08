@@ -1,18 +1,15 @@
 import React, { FC } from 'react'
 import { Evidence } from '~data/evidence'
-import { GhostState, IRow } from '~hooks/useData'
+import { IRow } from '~hooks/useData'
+import type { IStyledProps } from '~utils/styledProps'
 
-export const Row: FC<IRow> = ({ type, state, evidence }) => (
-  <tr
-    style={{
-      backgroundColor:
-        state === GhostState.SELECTED
-          ? '#78ff8c'
-          : state === GhostState.DISABLED
-          ? '#ff7878'
-          : undefined,
-    }}
-  >
+export const Row: FC<IRow & IStyledProps> = ({
+  type,
+  evidence,
+  className,
+  style,
+}) => (
+  <tr className={className} style={style}>
     <td>{type}</td>
 
     {Object.entries(Evidence).map(([key, ev]) => (
