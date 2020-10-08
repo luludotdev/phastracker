@@ -1,9 +1,15 @@
+import clsx from 'clsx'
 import React, { FC } from 'react'
 import { Evidence } from '~data/evidence'
-import { IRow } from '~hooks/useData'
+import { GhostState, IRow } from '~hooks/useData'
 
-export const Row: FC<IRow> = ({ type, evidence }) => (
-  <tr>
+export const Row: FC<IRow> = ({ type, evidence, state }) => (
+  <tr
+    className={clsx(
+      state === GhostState.SELECTED && 'selected',
+      state === GhostState.DISABLED && 'disabled'
+    )}
+  >
     <style jsx>
       {`
         $border-radius = 0.5rem
@@ -22,6 +28,13 @@ export const Row: FC<IRow> = ({ type, evidence }) => (
           &.ghost
             text-align left
             font-weight bold
+
+          tr.selected &
+            background-color rgba(255, 255, 255, 0.15)
+
+          tr.disabled &
+            font-style italic
+            color rgba(255, 255, 255, 0.3)
 
         tr:first-child
           & > td
