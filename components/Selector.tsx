@@ -1,4 +1,5 @@
-import { FC, useCallback } from 'react'
+import clsx from 'clsx'
+import { FC, useCallback, useMemo } from 'react'
 import { Evidence } from '~data/evidence'
 import { useData } from '~hooks/useData'
 import { useStore } from '~hooks/useStore'
@@ -24,6 +25,23 @@ export const Selector: FC = () => {
   const resetClicked = useCallback(() => {
     dispatch({ type: 'resetSelector' })
   }, [dispatch])
+
+  const entries = useMemo<Array<[string, Evidence, boolean, boolean]>>(() => {
+    const x = Object.entries(Evidence).map(([key, evidence]) => {
+      const disableConfirm = state.ruledOut.get(evidence)
+        ? true
+        : enabledEvidence.includes(evidence) === false
+
+      return [
+        key,
+        evidence,
+        disableConfirm,
+        state.confirmed.get(evidence) ?? false,
+      ]
+    })
+
+    return x as Array<[string, Evidence, boolean, boolean]>
+  }, [state.confirmed, state.ruledOut, enabledEvidence])
 
   return (
     <div className='container'>
@@ -57,6 +75,9 @@ export const Selector: FC = () => {
               cursor pointer
               background-color rgba(255, 255, 255, 0.15)
 
+            &.disabled
+              background-color rgba(255, 255, 255, 0.02)
+
           tr:first-child
             & > th
               border-top 0
@@ -85,29 +106,25 @@ export const Selector: FC = () => {
         </thead>
 
         <tbody>
-          {Object.entries(Evidence).map(([key, evidence]) => (
+          {entries.map(([key, evidence, disableConfirm, disableRuleOut]) => (
             <tr key={key}>
               <td className='evidence'>{evidence}</td>
-              <td>
+              <td className={clsx(disableConfirm && 'disabled')}>
                 <input
                   type='checkbox'
                   checked={state.confirmed.get(evidence)}
-                  disabled={
-                    // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
-                    state.ruledOut.get(evidence) ||
-                    enabledEvidence.includes(evidence) === false
-                  }
+                  disabled={disableConfirm}
                   onChange={() =>
                     setConfirmed(evidence, !state.confirmed.get(evidence))
                   }
                 />
               </td>
 
-              <td>
+              <td className={clsx(disableRuleOut && 'disabled')}>
                 <input
                   type='checkbox'
                   checked={state.ruledOut.get(evidence)}
-                  disabled={state.confirmed.get(evidence)}
+                  disabled={disableRuleOut}
                   onChange={() =>
                     setRuledOut(evidence, !state.ruledOut.get(evidence))
                   }
