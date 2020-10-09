@@ -15,6 +15,7 @@ const NextApp = ({ Component, pageProps }: AppProps) => (
           box-sizing inherit
 
         body
+          height 100vh
           margin 0
           padding 2rem 1rem
           padding-bottom 0
