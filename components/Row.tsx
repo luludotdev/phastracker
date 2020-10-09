@@ -1,65 +1,79 @@
 import clsx from 'clsx'
-import React, { FC } from 'react'
+import React, { FC, useCallback } from 'react'
 import { Evidence } from '~data/evidence'
 import { GhostState, IRow } from '~hooks/useData'
+import { useStore } from '~hooks/useStore'
 
-export const Row: FC<IRow> = ({ type, evidence, state }) => (
-  <tr
-    className={clsx(
-      state === GhostState.SELECTED && 'selected',
-      state === GhostState.DISABLED && 'disabled'
-    )}
-  >
-    <style jsx>
-      {`
-        $border-radius = 0.5rem
+export const Row: FC<IRow> = ({ type, evidence, state }) => {
+  const { dispatch } = useStore()
+  const onClick = useCallback(() => {
+    dispatch({ type: 'setSelectedGhost', value: type })
+  }, [dispatch, type])
 
-        td
-          &:first-child
-            border-left 0
-          &:last-child
-            border-right 0
+  return (
+    <tr
+      className={clsx(
+        state === GhostState.SELECTED && 'selected',
+        state === GhostState.DISABLED && 'disabled'
+      )}
+    >
+      <style jsx>
+        {`
+          $border-radius = 0.5rem
 
-          border 1px solid rgb(80, 80, 80)
-          padding 0.35rem 0.6rem
-          text-align center
-          background-color rgba(255, 255, 255, 0.08)
+          td
+            &:first-child
+              border-left 0
+            &:last-child
+              border-right 0
 
-          &.ghost
-            text-align left
-            font-weight bold
+            border 1px solid rgb(80, 80, 80)
+            padding 0.35rem 0.6rem
+            text-align center
+            background-color rgba(255, 255, 255, 0.08)
 
-          tr.selected &
-            background-color rgba(255, 255, 255, 0.15)
+            &.ghost
+              text-align left
+              font-weight bold
 
-          tr.disabled &
-            font-style italic
-            color rgba(255, 255, 255, 0.3)
+              &:hover
+                cursor pointer
+                background-color rgba(255, 255, 255, 0.15)
 
-        tr:first-child
-          & > td
-            border-top 0
-          & > td:first-child
-            border-radius $border-radius 0 0 0
-          & > td:last-child
-            border-radius 0 $border-radius 0 0
+            tr.selected &
+              background-color rgba(255, 255, 255, 0.15)
+
+            tr.disabled &
+              font-style italic
+              color rgba(255, 255, 255, 0.3)
+
+          tr:first-child
+            & > td
+              border-top 0
+            & > td:first-child
+              border-radius $border-radius 0 0 0
+            & > td:last-child
+              border-radius 0 $border-radius 0 0
 
 
-        tr:last-child
-          & > td
-            border-bottom 0
-          & > td:first-child
-            border-radius 0 0 0 $border-radius
-          & > td:last-child
-            border-radius 0 0 $border-radius 0
+          tr:last-child
+            & > td
+              border-bottom 0
+            & > td:first-child
+              border-radius 0 0 0 $border-radius
+            & > td:last-child
+              border-radius 0 0 $border-radius 0
 
-      `}
-    </style>
+        `}
+      </style>
 
-    <td className='ghost'>{type}</td>
+      <td className='ghost' onClick={onClick}>
+        {type}
+      </td>
 
-    {Object.entries(Evidence).map(([key, ev]) => (
-      <td key={key}>{evidence.includes(ev) ? ev : ''}</td>
-    ))}
-  </tr>
-)
+      {Object.entries(Evidence).map(([key, ev]) => (
+        <td key={key}>{evidence.includes(ev) ? ev : ''}</td>
+      ))}
+    </tr>
+  )
+}
