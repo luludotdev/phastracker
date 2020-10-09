@@ -22,8 +22,7 @@
     "paths": {
       "~components/*": ["components/*"],
       "~data/*": ["lib/data/*"],
-      "~hooks/*": ["lib/hooks/*"],
-      "~utils/*": ["lib/utils/*"]
+      "~hooks/*": ["lib/hooks/*"]
     }
   },
   "include": [
