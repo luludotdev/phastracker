@@ -5,10 +5,13 @@ import React, {
   useReducer,
 } from 'react'
 import { Evidence } from '~data/evidence'
+import { GhostType } from '~data/ghosts'
 
 interface IState {
   confirmed: Map<Evidence, boolean>
   ruledOut: Map<Evidence, boolean>
+
+  selected: GhostType
 }
 
 interface IContext {
@@ -19,6 +22,8 @@ interface IContext {
 const initialState: IState = {
   confirmed: new Map(Object.values(Evidence).map(x => [x, false])),
   ruledOut: new Map(Object.values(Evidence).map(x => [x, false])),
+
+  selected: GhostType.SPIRIT,
 }
 
 // @ts-expect-error
@@ -27,6 +32,7 @@ export const store = createContext<Readonly<IContext>>({ state: initialState })
 type Action =
   | { type: 'setConfirmed'; value: [Evidence, boolean] }
   | { type: 'setRuledOut'; value: [Evidence, boolean] }
+  | { type: 'setSelectedGhost'; value: GhostType }
 
 export const Provider: FunctionComponent = ({ children }) => {
   const [state, dispatch] = useReducer<Reducer<IState, Action>>(
@@ -43,6 +49,9 @@ export const Provider: FunctionComponent = ({ children }) => {
             ...previousState,
             ruledOut: setEvidence(previousState.ruledOut, ...action.value),
           }
+
+        case 'setSelectedGhost':
+          return { ...previousState, selected: action.value }
 
         default:
           throw new Error('Invalid Action')
