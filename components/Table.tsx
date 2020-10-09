@@ -14,7 +14,7 @@ export const Table: FC = () => {
             border-radius 0.5rem
             border 1px solid rgb(80, 80, 80)
             margin-bottom 0.2rem
-            margin-top 1rem
+            margin-top 1.5rem
 
           table
             width 100%
