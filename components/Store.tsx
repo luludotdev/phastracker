@@ -32,6 +32,7 @@ export const store = createContext<Readonly<IContext>>({ state: initialState })
 type Action =
   | { type: 'setConfirmed'; value: [Evidence, boolean] }
   | { type: 'setRuledOut'; value: [Evidence, boolean] }
+  | { type: 'resetSelector'; value?: void }
   | { type: 'setSelectedGhost'; value: GhostType }
 
 export const Provider: FunctionComponent = ({ children }) => {
@@ -48,6 +49,13 @@ export const Provider: FunctionComponent = ({ children }) => {
           return {
             ...previousState,
             ruledOut: setEvidence(previousState.ruledOut, ...action.value),
+          }
+
+        case 'resetSelector':
+          return {
+            ...previousState,
+            confirmed: initialState.confirmed,
+            ruledOut: initialState.ruledOut,
           }
 
         case 'setSelectedGhost':

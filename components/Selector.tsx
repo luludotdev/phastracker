@@ -21,6 +21,10 @@ export const Selector: FC = () => {
     [dispatch]
   )
 
+  const resetClicked = useCallback(() => {
+    dispatch({ type: 'resetSelector' })
+  }, [dispatch])
+
   return (
     <div className='container'>
       <style jsx>
@@ -49,6 +53,10 @@ export const Selector: FC = () => {
             &.evidence
               text-align left
 
+            &.reset:hover
+              cursor pointer
+              background-color rgba(255, 255, 255, 0.15)
+
           tr:first-child
             & > th
               border-top 0
@@ -61,9 +69,9 @@ export const Selector: FC = () => {
             & > td
               border-bottom 0
             & > td:first-child
-              border-radius 0 0 0 $border-radius
+              border-bottom-left-radius $border-radius
             & > td:last-child
-              border-radius 0 0 $border-radius 0
+              border-bottom-right-radius $border-radius
         `}
       </style>
 
@@ -107,6 +115,12 @@ export const Selector: FC = () => {
               </td>
             </tr>
           ))}
+
+          <tr onClick={resetClicked}>
+            <td className='reset' colSpan={3}>
+              <b>Reset</b>
+            </td>
+          </tr>
         </tbody>
       </table>
     </div>
