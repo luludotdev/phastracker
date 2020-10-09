@@ -1,17 +1,13 @@
 import { NextPage } from 'next'
-import Head from 'next/head'
 import React from 'react'
 import { Container } from '~components/Container'
+import { Meta } from '~components/Meta'
 import { Profile } from '~components/Profile'
 import { Selector } from '~components/Selector'
 import { Table } from '~components/Table'
 
 const App: NextPage = () => (
   <>
-    <Head>
-      <title>Phastracker</title>
-    </Head>
-
     <style jsx>
       {`
         h1
@@ -28,6 +24,12 @@ const App: NextPage = () => (
             flex 1
       `}
     </style>
+
+    <Meta
+      siteName='Phastracker'
+      description='Phasmophobia Evidence Tracker'
+      colour='#111111'
+    />
 
     <Container>
       <h1>Phasmophobia Evidence Tracker</h1>
