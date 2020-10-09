@@ -40,12 +40,9 @@ export const Row: FC<IRow> = ({ type, evidence, state }) => {
                 cursor pointer
                 background-color rgba(255, 255, 255, 0.15)
 
-            tr.selected &
-              background-color rgba(255, 255, 255, 0.15)
-
             tr.disabled &
-              font-style italic
-              color rgba(255, 255, 255, 0.3)
+              background-color rgba(255, 255, 255, 0.02)
+              color rgba(255, 255, 255, 0.25)
 
           tr:first-child
             & > td
