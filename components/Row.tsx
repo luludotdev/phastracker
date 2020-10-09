@@ -52,7 +52,6 @@ export const Row: FC<IRow> = ({ type, evidence, state }) => {
             & > td:last-child
               border-radius 0 $border-radius 0 0
 
-
           tr:last-child
             & > td
               border-bottom 0
