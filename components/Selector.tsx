@@ -8,18 +8,20 @@ export const Selector: FC = () => {
   const { state, dispatch } = useStore()
   const { enabledEvidence } = useData()
 
-  const setConfirmed = useCallback(
-    (evidence: Evidence, value: boolean) => {
-      dispatch({ type: 'setConfirmed', value: [evidence, value] })
+  const toggleConfirmed = useCallback(
+    (evidence: Evidence) => {
+      const value = state.confirmed.get(evidence)
+      dispatch({ type: 'setConfirmed', value: [evidence, !value] })
     },
-    [dispatch]
+    [dispatch, state.confirmed]
   )
 
-  const setRuledOut = useCallback(
-    (evidence: Evidence, value: boolean) => {
-      dispatch({ type: 'setRuledOut', value: [evidence, value] })
+  const toggleRuledOut = useCallback(
+    (evidence: Evidence) => {
+      const value = state.ruledOut.get(evidence)
+      dispatch({ type: 'setRuledOut', value: [evidence, !value] })
     },
-    [dispatch]
+    [dispatch, state.ruledOut]
   )
 
   const resetClicked = useCallback(() => {
@@ -71,6 +73,11 @@ export const Selector: FC = () => {
             &.evidence
               text-align left
 
+            &.checkbox
+              cursor pointer
+              & > input[type='checkbox']
+                cursor pointer
+
             &.reset:hover
               cursor pointer
               background-color rgba(255, 255, 255, 0.15)
@@ -109,25 +116,21 @@ export const Selector: FC = () => {
           {entries.map(([key, evidence, disableConfirm, disableRuleOut]) => (
             <tr key={key}>
               <td className='evidence'>{evidence}</td>
-              <td className={clsx(disableConfirm && 'disabled')}>
+              <td className={clsx('checkbox', disableConfirm && 'disabled')}>
                 <input
                   type='checkbox'
                   checked={state.confirmed.get(evidence)}
                   disabled={disableConfirm}
-                  onChange={() =>
-                    setConfirmed(evidence, !state.confirmed.get(evidence))
-                  }
+                  onChange={() => toggleConfirmed(evidence)}
                 />
               </td>
 
-              <td className={clsx(disableRuleOut && 'disabled')}>
+              <td className={clsx('checkbox', disableRuleOut && 'disabled')}>
                 <input
                   type='checkbox'
                   checked={state.ruledOut.get(evidence)}
                   disabled={disableRuleOut}
-                  onChange={() =>
-                    setRuledOut(evidence, !state.ruledOut.get(evidence))
-                  }
+                  onChange={() => toggleRuledOut(evidence)}
                 />
               </td>
             </tr>
