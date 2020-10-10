@@ -2,9 +2,10 @@ import { GetServerSideProps, NextPage } from 'next'
 import { Container } from '~components/Container'
 import { Meta } from '~components/Meta'
 import { Profile } from '~components/Profile'
+import { RenderTip } from '~components/RenderTip'
 import { Selector } from '~components/Selector'
 import { Table } from '~components/Table'
-import { ParseTip, randomTip, Tip } from '~data/tips'
+import { randomTip, Tip } from '~data/tips'
 
 interface IProps {
   tip: Tip
@@ -45,7 +46,7 @@ const App: NextPage<IProps> = ({ tip }) => (
     <Container>
       <h1>Phasmophobia Evidence Tracker</h1>
       <p className='tip'>
-        Tip: <ParseTip tip={tip} />
+        Tip: <RenderTip tip={tip} />
       </p>
 
       <div className='horizontal'>
