@@ -73,10 +73,8 @@ export const Selector: FC = () => {
             &.evidence
               text-align left
 
-            &.checkbox
+            &.checkbox > input[type='checkbox']
               cursor pointer
-              & > input[type='checkbox']
-                cursor pointer
 
             &.reset:hover
               cursor pointer
