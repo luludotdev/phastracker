@@ -1,18 +1,18 @@
-import { Evidence } from './evidence'
+import { Evidence } from '~data/evidence'
 
 export enum GhostType {
-  SPIRIT = 'Spirit',
-  WRAITH = 'Wraith',
-  PHANTOM = 'Phantom',
-  POLTERGEIST = 'Poltergeist',
   BANSHEE = 'Banshee',
+  DEMON = 'Demon',
   JINN = 'Jinn',
   MARE = 'Mare',
+  ONI = 'Oni',
+  PHANTOM = 'Phantom',
+  POLTERGEIST = 'Poltergeist',
   REVENANT = 'Revenant',
   SHADE = 'Shade',
-  DEMON = 'Demon',
+  SPIRIT = 'Spirit',
+  WRAITH = 'Wraith',
   YUREI = 'Yurei',
-  ONI = 'Oni',
 }
 
 export interface IGhost {
