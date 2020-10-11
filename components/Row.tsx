@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import React, { FC, useCallback } from 'react'
+import { FC, useCallback, useMemo } from 'react'
 import { Evidence } from '~data/evidence'
 import { GhostState, IRow } from '~hooks/useData'
 import { useStore } from '~hooks/useStore'
@@ -10,13 +10,17 @@ export const Row: FC<IRow> = ({ type, evidence, state }) => {
     dispatch({ type: 'setSelectedGhost', value: type })
   }, [dispatch, type])
 
-  return (
-    <tr
-      className={clsx(
+  const className = useMemo(
+    () =>
+      clsx(
         state === GhostState.SELECTED && 'selected',
         state === GhostState.DISABLED && 'disabled'
-      )}
-    >
+      ),
+    [state]
+  )
+
+  return (
+    <tr className={className}>
       <style jsx>
         {`
           $border-radius = 0.5rem
