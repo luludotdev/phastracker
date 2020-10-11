@@ -8,6 +8,7 @@ const NextApp = ({ Component, pageProps }: AppProps) => (
         html, body
           box-sizing border-box
           background-color #111
+          overflow-y overlay
           color #fdfdfd
 
         *, *:before, *:after
