@@ -6,13 +6,15 @@ interface IProps {
 }
 
 export const RenderTip: FC<IProps> = ({ tip }) => {
-  const elements = useMemo(() => {
-    const array = tip.split('*')
-    return array.reduce<any[]>((acc, curr, i) => {
-      const key = `${i}-${curr}`
-      return [...acc, i % 2 === 0 ? curr : <b key={key}>{curr}</b>]
-    }, [])
-  }, [tip])
+  const elements = useMemo(
+    () =>
+      tip.split('*').reduce<Array<string | JSX.Element>>((acc, curr, i) => {
+        const key = `${i}-${curr}`
+        return [...acc, i % 2 === 0 ? curr : <b key={key}>{curr}</b>]
+      }, []),
+    [tip]
+  )
 
-  return <span>{elements}</span>
+  // eslint-disable-next-line react/jsx-no-useless-fragment
+  return <>{elements}</>
 }
