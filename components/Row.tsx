@@ -44,6 +44,9 @@ export const Row: FC<IRow> = ({ type, evidence, state }) => {
               background-color rgba(255, 255, 255, 0.02)
               color rgba(255, 255, 255, 0.25)
 
+              &.ghost:hover
+                background-color rgba(255, 255, 255, 0.05)
+
           tr:first-child
             & > td
               border-top 0
