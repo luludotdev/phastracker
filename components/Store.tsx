@@ -1,9 +1,4 @@
-import React, {
-  createContext,
-  FunctionComponent,
-  Reducer,
-  useReducer,
-} from 'react'
+import { createContext, FunctionComponent, Reducer, useReducer } from 'react'
 import { Evidence } from '~data/evidence'
 import { GhostType } from '~data/ghosts'
 

@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 import { useData } from '~hooks/useData'
 import { Row } from './Row'
 
