@@ -16,6 +16,7 @@ export const Container: FC = ({ children }) => (
           background-color rgba(255, 255, 255, 0.08)
           box-shadow 0 5px 15px rgba(0, 0, 0, 0.3), 0 2px 10px rgba(0, 0, 0, 0.2)
           padding 1rem 1.2rem
+          margin-bottom 2rem
       `}
     </style>
 

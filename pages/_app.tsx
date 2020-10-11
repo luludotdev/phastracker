@@ -9,7 +9,6 @@ const NextApp = ({ Component, pageProps }: AppProps) => (
           box-sizing border-box
           background-color #111
           color #fdfdfd
-          overflow-y hidden
 
         *, *:before, *:after
           box-sizing inherit
