@@ -5,7 +5,7 @@ import { useStore } from '~hooks/useStore'
 export const Profile: FC = () => {
   const { state } = useStore()
   const ghost = useMemo<IGhost>(() => {
-    const selected = ghosts.find(x => x.type === state.selected)
+    const selected = ghosts[state.selected]
     if (selected === undefined) throw new Error('Unknown ghost selected!')
 
     return selected
@@ -28,7 +28,7 @@ export const Profile: FC = () => {
         `}
       </style>
 
-      <h2>{ghost.type}</h2>
+      <h2>{state.selected}</h2>
       <p>{ghost.description}</p>
 
       <h2>Strength</h2>
