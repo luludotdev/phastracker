@@ -42,7 +42,7 @@ export const ghosts: readonly IGhost[] = [
       'They are some of the most dangerous ghosts you will find. ' +
       'They are the only ghosts who can travel through walls and have the ability of flight.',
     strength:
-      'They never touch the ground, so they can’t be tracked by footsteps.',
+      "They never touch the ground, so they can't be tracked by footsteps.",
     weakness: 'Wraiths have a toxic reaction to salt.',
   },
   {
@@ -83,7 +83,7 @@ export const ghosts: readonly IGhost[] = [
       'It has also been known to be able to travel at significant speed.',
     strength: 'They will travel at a faster speed if its victim is far away.',
     weakness:
-      'Turning off the location’s power source will prevent them from using their ability.',
+      "Turning off the location's power source will prevent them from using their ability.",
   },
   {
     type: GhostType.MARE,
