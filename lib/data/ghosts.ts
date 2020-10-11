@@ -33,7 +33,7 @@ export const ghosts: readonly IGhost[] = [
       'They are usually discovered at one of their hunting grounds after an unexplained death.',
     strength: 'Nothing.',
     weakness:
-      'Using smudge sticks on a Spirit will stop it attacking for a long period of time.',
+      'Using smudge sticks near a Spirit will stop it attacking for a long period of time.',
   },
   {
     type: GhostType.WRAITH,
