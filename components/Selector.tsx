@@ -1,5 +1,6 @@
 import clsx from 'clsx'
 import { FC, useCallback, useMemo } from 'react'
+import { SMALL_SIZE } from '~constants'
 import { Evidence } from '~data/evidence'
 import { useData } from '~hooks/useData'
 import { useStore } from '~hooks/useStore'
@@ -69,6 +70,10 @@ export const Selector: FC = () => {
             padding 0.35rem 0.6rem
             text-align center
             background-color rgba(255, 255, 255, 0.08)
+
+            @media only screen and (max-width ${SMALL_SIZE})
+              &
+                font-size 0.9rem
 
             &.evidence
               text-align left
