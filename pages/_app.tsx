@@ -25,6 +25,39 @@ const NextApp = ({ Component, pageProps }: AppProps) => (
       `}
     </style>
 
+    <style jsx global>
+      {`
+        $color = rgb(255, 255, 255)
+
+        ::-webkit-scrollbar
+          width 13px
+          height 0
+
+        ::-webkit-scrollbar-thumb
+          height 1em
+          border 4px solid transparent
+          background-clip padding-box
+          border-radius 50px
+          box-shadow inset 0 0 0 1px transparent
+
+          background-color alpha($color, 0.4)
+
+        ::-webkit-scrollbar-thumb:hover
+          background-color alpha($color, 0.45)
+
+        ::-webkit-scrollbar-thumb:active
+          background-color alpha($color, 0.55)
+
+        ::-webkit-scrollbar-button
+          width 0
+          height 0
+          display none
+
+        ::-webkit-scrollbar-corner
+          background-color transparent
+      `}
+    </style>
+
     <Provider>
       <Component {...pageProps} />
     </Provider>
