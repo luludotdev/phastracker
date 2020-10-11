@@ -1,6 +1,9 @@
+import { showMessage } from 'lib/console'
 import { AppProps } from 'next/app'
 import { Provider } from '~components/Store'
 import { LARGE_SIZE } from '~constants'
+
+showMessage()
 
 const NextApp = ({ Component, pageProps }: AppProps) => (
   <>
