@@ -17,7 +17,7 @@ export enum GhostType {
 
 export interface IGhost {
   type: GhostType
-  evidence: readonly Evidence[]
+  evidence: readonly [Evidence, Evidence, Evidence]
 
   description: string
   strength: string
