@@ -31,9 +31,18 @@ const App: NextPage<IProps> = ({ tip }) => (
           display flex
           margin-top 1.2rem
 
+          @media only screen and (max-width 900px)
+            &
+              flex-direction column
+
           & .profile
             margin-left 1rem
             flex 1
+
+            @media only screen and (max-width 900px)
+              &
+                margin-top 1rem
+                margin-left 0
         `}
     </style>
 

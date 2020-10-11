@@ -12,7 +12,7 @@ export const Profile: FC = () => {
   }, [state.selected])
 
   return (
-    <div>
+    <div className='profile'>
       <style jsx>
         {`
           h2
@@ -25,6 +25,10 @@ export const Profile: FC = () => {
 
           p
             margin 0
+
+          @media only screen and (max-width 1150px)
+            & .profile
+              font-size 0.9rem
         `}
       </style>
 

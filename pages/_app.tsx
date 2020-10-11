@@ -11,14 +11,16 @@ const NextApp = ({ Component, pageProps }: AppProps) => (
           overflow-y overlay
           color #fdfdfd
 
+          @media only screen and (max-width 1150px)
+            &
+              overflow-y initial
+
         *, *:before, *:after
           box-sizing inherit
 
         body
-          height 100vh
           margin 0
-          padding 2rem 1rem
-          padding-bottom 0
+          height 100vh
           font 16px/1.5 'Source Sans Pro', system-ui, sans-serif
 
         ::selection

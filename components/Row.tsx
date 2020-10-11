@@ -2,6 +2,7 @@ import clsx from 'clsx'
 import { FC, useCallback, useMemo } from 'react'
 import { Evidence } from '~data/evidence'
 import { GhostState, IRow } from '~hooks/useData'
+import { useMediaQuery } from '~hooks/useMediaQuery'
 import { useStore } from '~hooks/useStore'
 
 export const Row: FC<IRow> = ({ type, evidence, state }) => {
@@ -9,6 +10,9 @@ export const Row: FC<IRow> = ({ type, evidence, state }) => {
   const onClick = useCallback(() => {
     dispatch({ type: 'setSelectedGhost', value: type })
   }, [dispatch, type])
+
+  const isSmall = useMediaQuery('(max-width: 900px)')
+  const isTiny = useMediaQuery('(max-width: 730px)')
 
   const className = useMemo(
     () =>
@@ -55,17 +59,17 @@ export const Row: FC<IRow> = ({ type, evidence, state }) => {
             & > td
               border-top 0
             & > td:first-child
-              border-radius $border-radius 0 0 0
+              border-top-left-radius $border-radius
             & > td:last-child
-              border-radius 0 $border-radius 0 0
+              border-top-right-radius $border-radius
 
           tr:last-child
             & > td
               border-bottom 0
             & > td:first-child
-              border-radius 0 0 0 $border-radius
+              border-bottom-left-radius $border-radius
             & > td:last-child
-              border-radius 0 0 $border-radius 0
+              border-bottom-right-radius $border-radius
 
         `}
       </style>
@@ -74,9 +78,15 @@ export const Row: FC<IRow> = ({ type, evidence, state }) => {
         {type}
       </td>
 
-      {Object.entries(Evidence).map(([key, ev]) => (
-        <td key={key}>{evidence.includes(ev) ? ev : ''}</td>
-      ))}
+      {Object.entries(Evidence).map(([key, ev]) =>
+        isTiny ? null : isSmall ? (
+          evidence.includes(ev) ? (
+            <td key={key}>{ev}</td>
+          ) : null
+        ) : (
+          <td key={key}>{evidence.includes(ev) ? ev : ''}</td>
+        )
+      )}
     </tr>
   )
 }
