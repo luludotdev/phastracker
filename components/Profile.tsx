@@ -1,4 +1,5 @@
 import { FC, useMemo } from 'react'
+import { LARGE_SIZE } from '~constants'
 import { ghosts, IGhost } from '~data/ghosts'
 import { useStore } from '~hooks/useStore'
 
@@ -26,7 +27,7 @@ export const Profile: FC = () => {
           p
             margin 0
 
-          @media only screen and (max-width 1150px)
+          @media only screen and (max-width ${LARGE_SIZE})
             & .profile
               font-size 0.9rem
         `}

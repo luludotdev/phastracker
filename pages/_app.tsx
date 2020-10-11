@@ -1,5 +1,6 @@
 import { AppProps } from 'next/app'
 import { Provider } from '~components/Store'
+import { LARGE_SIZE } from '~constants'
 
 const NextApp = ({ Component, pageProps }: AppProps) => (
   <>
@@ -11,7 +12,7 @@ const NextApp = ({ Component, pageProps }: AppProps) => (
           overflow-y overlay
           color #fdfdfd
 
-          @media only screen and (max-width 1150px)
+          @media only screen and (max-width ${LARGE_SIZE})
             &
               overflow-y initial
 

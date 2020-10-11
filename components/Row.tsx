@@ -2,7 +2,7 @@ import clsx from 'clsx'
 import { FC, useCallback, useMemo } from 'react'
 import { Evidence } from '~data/evidence'
 import { GhostState, IRow } from '~hooks/useData'
-import { useMediaQuery } from '~hooks/useMediaQuery'
+import { useSizes } from '~hooks/useSizes'
 import { useStore } from '~hooks/useStore'
 
 export const Row: FC<IRow> = ({ type, evidence, state }) => {
@@ -10,9 +10,6 @@ export const Row: FC<IRow> = ({ type, evidence, state }) => {
   const onClick = useCallback(() => {
     dispatch({ type: 'setSelectedGhost', value: type })
   }, [dispatch, type])
-
-  const isSmall = useMediaQuery('(max-width: 900px)')
-  const isTiny = useMediaQuery('(max-width: 730px)')
 
   const className = useMemo(
     () =>
@@ -23,6 +20,7 @@ export const Row: FC<IRow> = ({ type, evidence, state }) => {
     [state]
   )
 
+  const { isSmall, isTiny } = useSizes()
   return (
     <tr className={className}>
       <style jsx>

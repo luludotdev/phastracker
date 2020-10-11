@@ -22,7 +22,8 @@
     "paths": {
       "~components/*": ["components/*"],
       "~data/*": ["lib/data/*"],
-      "~hooks/*": ["lib/hooks/*"]
+      "~hooks/*": ["lib/hooks/*"],
+      "~constants": ["lib/constants"]
     }
   },
   "include": [

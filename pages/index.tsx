@@ -5,6 +5,7 @@ import { Profile } from '~components/Profile'
 import { RenderTip } from '~components/RenderTip'
 import { Selector } from '~components/Selector'
 import { Table } from '~components/Table'
+import { MEDIUM_SIZE } from '~constants'
 import { randomTip, Tip } from '~data/tips'
 
 interface IProps {
@@ -31,7 +32,7 @@ const App: NextPage<IProps> = ({ tip }) => (
           display flex
           margin-top 1.2rem
 
-          @media only screen and (max-width 900px)
+          @media only screen and (max-width ${MEDIUM_SIZE})
             &
               flex-direction column
 
@@ -39,7 +40,7 @@ const App: NextPage<IProps> = ({ tip }) => (
             margin-left 1rem
             flex 1
 
-            @media only screen and (max-width 900px)
+            @media only screen and (max-width ${MEDIUM_SIZE})
               &
                 margin-top 1rem
                 margin-left 0
