@@ -26,6 +26,9 @@ const NextApp = ({ Component, pageProps }: AppProps) => (
           height 100vh
           font 16px/1.5 'Source Sans Pro', system-ui, sans-serif
 
+        #__next
+          height 100%
+
         ::selection
           background-color rgba(255, 255, 255, 0.2)
       `}

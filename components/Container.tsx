@@ -9,6 +9,7 @@ export const Container: FC = ({ children }) => (
           display flex
           flex-direction column
           align-items center
+          height 100%
 
         .box
           width 100%
@@ -22,6 +23,7 @@ export const Container: FC = ({ children }) => (
           @media only screen and (max-width ${LARGE_SIZE})
             border-radius 0
             margin 0
+            flex 1
       `}
     </style>
 
