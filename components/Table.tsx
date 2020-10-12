@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import { BORDER_RADIUS } from '~constants'
 import { useData } from '~hooks/useData'
 import { Row } from './Row'
 
@@ -11,9 +12,9 @@ export const Table: FC = () => {
         {`
           .container
             width 100%
-            border-radius 0.5rem
+            border-radius ${BORDER_RADIUS}
             border 1px solid rgb(80, 80, 80)
-            margin-bottom 0.2rem
+            margin-bottom 0.3rem
             margin-top 1.5rem
 
           table

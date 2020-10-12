@@ -22,12 +22,10 @@ const App: NextPage<IProps> = ({ tip }) => (
           text-align center
 
           @media only screen and (max-width ${MEDIUM_SIZE})
-            &
-              font-size 1.95rem
+            font-size 1.95rem
 
           @media only screen and (max-width ${SMALL_SIZE})
-            &
-              font-size 1.75rem
+            font-size 1.75rem
 
         .tip
           margin 0
@@ -37,29 +35,25 @@ const App: NextPage<IProps> = ({ tip }) => (
           color rgba(255, 255, 255, 0.85)
 
           @media only screen and (max-width ${MEDIUM_SIZE})
-            &
-              font-size 0.95rem
+            font-size 0.95rem
 
           @media only screen and (max-width ${SMALL_SIZE})
-            &
-              font-size 0.9rem
+            font-size 0.9rem
 
         div.horizontal
           display flex
           margin-top 1.2rem
 
           @media only screen and (max-width ${MEDIUM_SIZE})
-            &
-              flex-direction column
+            flex-direction column
 
           & .profile
             margin-left 1rem
             flex 1
 
             @media only screen and (max-width ${MEDIUM_SIZE})
-              &
-                margin-top 1rem
-                margin-left 0
+              margin-top 1rem
+              margin-left 0
         `}
     </style>
 

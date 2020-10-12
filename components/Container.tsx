@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { LARGE_SIZE } from '~constants'
+import { BORDER_RADIUS, LARGE_SIZE } from '~constants'
 
 export const Container: FC = ({ children }) => (
   <div className='container'>
@@ -13,16 +13,15 @@ export const Container: FC = ({ children }) => (
         .box
           width 100%
           max-width ${LARGE_SIZE}
-          border-radius 0.5rem
+          border-radius ${BORDER_RADIUS}
           background-color rgba(255, 255, 255, 0.08)
           box-shadow 0 5px 15px rgba(0, 0, 0, 0.3), 0 2px 10px rgba(0, 0, 0, 0.2)
           padding 1rem 1.2rem
           margin 1rem 2rem
 
           @media only screen and (max-width ${LARGE_SIZE})
-            &
-              border-radius 0
-              margin 0
+            border-radius 0
+            margin 0
       `}
     </style>
 

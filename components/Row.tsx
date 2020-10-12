@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 import { FC, useCallback, useMemo } from 'react'
-import { SMALL_SIZE } from '~constants'
+import { BORDER_RADIUS, SMALL_SIZE } from '~constants'
 import { Evidence } from '~data/evidence'
 import { GhostState, IRow } from '~hooks/useData'
 import { useSizes } from '~hooks/useSizes'
@@ -26,7 +26,7 @@ export const Row: FC<IRow> = ({ type, evidence, state }) => {
     <tr className={className}>
       <style jsx>
         {`
-          $border-radius = 0.5rem
+          $border-radius = ${BORDER_RADIUS}
 
           td
             &:first-child
@@ -40,8 +40,7 @@ export const Row: FC<IRow> = ({ type, evidence, state }) => {
             background-color rgba(255, 255, 255, 0.08)
 
             @media only screen and (max-width ${SMALL_SIZE})
-              &
-                font-size 0.9rem
+              font-size 0.9rem
 
             &.ghost
               text-align left

@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 import { FC, useCallback, useMemo } from 'react'
-import { SMALL_SIZE } from '~constants'
+import { BORDER_RADIUS, SMALL_SIZE } from '~constants'
 import { Evidence } from '~data/evidence'
 import { useData } from '~hooks/useData'
 import { useStore } from '~hooks/useStore'
@@ -50,7 +50,7 @@ export const Selector: FC = () => {
     <div className='container'>
       <style jsx>
         {`
-          $border-radius = 0.5rem
+          $border-radius = ${BORDER_RADIUS}
 
           .container
             border-radius $border-radius
@@ -72,8 +72,7 @@ export const Selector: FC = () => {
             background-color rgba(255, 255, 255, 0.08)
 
             @media only screen and (max-width ${SMALL_SIZE})
-              &
-                font-size 0.9rem
+              font-size 0.9rem
 
             &.evidence
               text-align left
@@ -91,18 +90,18 @@ export const Selector: FC = () => {
           tr:first-child
             & > th
               border-top 0
-            & > th:first-child
-              border-radius $border-radius 0 0 0
-            & > th:last-child
-              border-radius 0 $border-radius 0 0
+              &:first-child
+                border-top-left-radius $border-radius
+              &:last-child
+                border-top-right-radius $border-radius
 
           tr:last-child
             & > td
               border-bottom 0
-            & > td:first-child
-              border-bottom-left-radius $border-radius
-            & > td:last-child
-              border-bottom-right-radius $border-radius
+              &:first-child
+                border-bottom-left-radius $border-radius
+              &:last-child
+                border-bottom-right-radius $border-radius
         `}
       </style>
 

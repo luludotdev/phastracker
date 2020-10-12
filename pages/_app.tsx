@@ -16,8 +16,7 @@ const NextApp = ({ Component, pageProps }: AppProps) => (
           color #fdfdfd
 
           @media only screen and (max-width ${LARGE_SIZE})
-            &
-              overflow-y initial
+            overflow-y initial
 
         *, *:before, *:after
           box-sizing inherit

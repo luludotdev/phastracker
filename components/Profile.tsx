@@ -27,8 +27,8 @@ export const Profile: FC = () => {
           p
             margin 0
 
-          @media only screen and (max-width ${LARGE_SIZE})
-            & .profile
+          .profile
+            @media only screen and (max-width ${LARGE_SIZE})
               font-size 0.9rem
         `}
       </style>
