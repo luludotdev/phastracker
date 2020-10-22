@@ -67,7 +67,7 @@ export const Provider: FunctionComponent = ({ children }) => {
 }
 
 const setEvidence: (
-  prev: Map<Evidence, boolean>,
+  previous: Map<Evidence, boolean>,
   type: Evidence,
   value: boolean
 ) => Map<Evidence, boolean> = (previous, type, value) => {
