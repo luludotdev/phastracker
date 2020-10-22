@@ -1,4 +1,10 @@
-import { createContext, FunctionComponent, Reducer, useReducer } from 'react'
+import {
+  createContext,
+  Dispatch,
+  FunctionComponent,
+  Reducer,
+  useReducer,
+} from 'react'
 import { Evidence } from '~data/evidence'
 import { GhostType } from '~data/ghosts'
 
@@ -11,7 +17,7 @@ interface IState {
 
 interface IContext {
   state: IState
-  dispatch: React.Dispatch<Action>
+  dispatch: Dispatch<Action>
 }
 
 const initialState: IState = {
