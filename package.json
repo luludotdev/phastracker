@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "xo"
+    "lint": "xo",
+    "test": "yarn run lint"
   },
   "dependencies": {
     "clsx": "^1.1.1",
