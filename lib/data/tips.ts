@@ -12,6 +12,9 @@ export enum Tip {
   CORPSE = "Snapping a photo of your buddies' corpse is worth a whole $10.",
   PTT = 'The ghost can always hear you, even when not holding push-to-talk.',
   LOSE_ITEMS = "If you survive, all your items are returned to you. You don't have to bring them back to the truck.",
+  HUNT_SANITY = 'All ghost types start hunting when you drop below 50% sanity, with the exception of the Banshee which can hunt at any time.',
+  HUNT_LIGHT = 'Turning your flashlight off during a hunt has no effect on the ghost tracking you.',
+  CANDLE = 'Using candles for natural light can slow sanity drain.',
 }
 
 export const randomTip: () => Tip = () => {
