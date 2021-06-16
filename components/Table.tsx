@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import type { FC } from 'react'
 import { BORDER_RADIUS } from '~constants'
 import { useData } from '~hooks/useData'
 import { Row } from './Row'

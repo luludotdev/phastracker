@@ -1,12 +1,14 @@
 import clsx from 'clsx'
-import { FC, useCallback, useMemo } from 'react'
+import { useCallback, useMemo } from 'react'
+import type { FC } from 'react'
 import { BORDER_RADIUS, SMALL_SIZE } from '~constants'
 import { Evidence } from '~data/evidence'
-import { GhostState, IRow } from '~hooks/useData'
+import { GhostState } from '~hooks/useData'
+import type { Row as RowProps } from '~hooks/useData'
 import { useSizes } from '~hooks/useSizes'
 import { useStore } from '~hooks/useStore'
 
-export const Row: FC<IRow> = ({ type, evidence, state }) => {
+export const Row: FC<RowProps> = ({ type, evidence, state }) => {
   const { dispatch } = useStore()
   const onClick = useCallback(() => {
     dispatch({ type: 'setSelectedGhost', value: type })

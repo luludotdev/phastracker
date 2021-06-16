@@ -1,7 +1,7 @@
 import { Evidence } from '~data/evidence'
-import { IGhost } from '.'
+import type { Ghost } from '.'
 
-export const yurei: IGhost = {
+export const yurei: Ghost = {
   evidence: [Evidence.WRITING, Evidence.FREEZING, Evidence.ORBS],
   description:
     'The Yurei is a ghost that has returned to the physical world, ' +

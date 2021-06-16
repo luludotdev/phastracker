@@ -1,11 +1,12 @@
-import { FC, useMemo } from 'react'
-import { Tip } from '~data/tips'
+import { useMemo } from 'react'
+import type { FC } from 'react'
+import type { Tip } from '~data/tips'
 
-interface IProps {
+interface Props {
   tip: Tip
 }
 
-export const RenderTip: FC<IProps> = ({ tip }) => {
+export const RenderTip: FC<Props> = ({ tip }) => {
   const elements = useMemo(
     () =>
       // eslint-disable-next-line unicorn/no-array-reduce

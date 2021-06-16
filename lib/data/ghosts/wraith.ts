@@ -1,7 +1,7 @@
 import { Evidence } from '~data/evidence'
-import { IGhost } from '.'
+import type { Ghost } from '.'
 
-export const wraith: IGhost = {
+export const wraith: Ghost = {
   evidence: [Evidence.SPIRIT_BOX, Evidence.FINGERPRINTS, Evidence.FREEZING],
   description:
     'They are some of the most dangerous ghosts you will find. ' +

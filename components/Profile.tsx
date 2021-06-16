@@ -1,11 +1,13 @@
-import { FC, useMemo } from 'react'
+import { useMemo } from 'react'
+import type { FC } from 'react'
 import { LARGE_SIZE } from '~constants'
-import { ghosts, IGhost } from '~data/ghosts'
+import { ghosts } from '~data/ghosts'
+import type { Ghost } from '~data/ghosts'
 import { useStore } from '~hooks/useStore'
 
 export const Profile: FC = () => {
   const { state } = useStore()
-  const ghost = useMemo<IGhost>(() => {
+  const ghost = useMemo<Ghost>(() => {
     const selected = ghosts[state.selected]
     if (selected === undefined) throw new Error('Unknown ghost selected!')
 

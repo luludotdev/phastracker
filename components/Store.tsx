@@ -1,27 +1,21 @@
-import {
-  createContext,
-  Dispatch,
-  FunctionComponent,
-  Reducer,
-  useMemo,
-  useReducer,
-} from 'react'
+import { createContext, useMemo, useReducer } from 'react'
+import type { Dispatch, FC, Reducer } from 'react'
 import { Evidence } from '~data/evidence'
 import { GhostType } from '~data/ghosts'
 
-interface IState {
+interface State {
   confirmed: Map<Evidence, boolean>
   ruledOut: Map<Evidence, boolean>
 
   selected: GhostType
 }
 
-interface IContext {
-  state: IState
+interface Context {
+  state: State
   dispatch: Dispatch<Action>
 }
 
-const initialState: IState = {
+const initialState: State = {
   confirmed: new Map(Object.values(Evidence).map(x => [x, false])),
   ruledOut: new Map(Object.values(Evidence).map(x => [x, false])),
 
@@ -29,7 +23,7 @@ const initialState: IState = {
 }
 
 // @ts-expect-error
-export const store = createContext<Readonly<IContext>>({ state: initialState })
+export const store = createContext<Readonly<Context>>({ state: initialState })
 
 type Action =
   | { type: 'setConfirmed'; value: [Evidence, boolean] }
@@ -37,8 +31,8 @@ type Action =
   | { type: 'resetSelector'; value?: void }
   | { type: 'setSelectedGhost'; value: GhostType }
 
-export const Provider: FunctionComponent = ({ children }) => {
-  const [state, dispatch] = useReducer<Reducer<IState, Action>>(
+export const Provider: FC = ({ children }) => {
+  const [state, dispatch] = useReducer<Reducer<State, Action>>(
     (previousState, action) => {
       switch (action.type) {
         case 'setConfirmed':

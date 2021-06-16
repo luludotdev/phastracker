@@ -6,13 +6,14 @@ import { RenderTip } from '~components/RenderTip'
 import { Selector } from '~components/Selector'
 import { Table } from '~components/Table'
 import { MEDIUM_SIZE, SMALL_SIZE } from '~constants'
-import { randomTip, Tip } from '~data/tips'
+import { randomTip } from '~data/tips'
+import type { Tip } from '~data/tips'
 
-interface IProps {
+interface Props {
   tip: Tip
 }
 
-const App: NextPage<IProps> = ({ tip }) => (
+const App: NextPage<Props> = ({ tip }) => (
   <>
     <style jsx>
       {`
@@ -82,7 +83,7 @@ const App: NextPage<IProps> = ({ tip }) => (
   </>
 )
 
-export const getServerSideProps: GetServerSideProps<IProps> = async () => {
+export const getServerSideProps: GetServerSideProps<Props> = async () => {
   const tip = randomTip()
   return { props: { tip } }
 }

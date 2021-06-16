@@ -1,5 +1,5 @@
 import { showMessage } from 'lib/console'
-import { AppProps } from 'next/app'
+import type { AppProps } from 'next/app'
 import { Provider } from '~components/Store'
 import { LARGE_SIZE } from '~constants'
 

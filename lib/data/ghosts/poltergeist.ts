@@ -1,7 +1,7 @@
 import { Evidence } from '~data/evidence'
-import { IGhost } from '.'
+import type { Ghost } from '.'
 
-export const poltergeist: IGhost = {
+export const poltergeist: Ghost = {
   evidence: [Evidence.SPIRIT_BOX, Evidence.FINGERPRINTS, Evidence.ORBS],
   description:
     'One of the most famous types of ghost, the Poltergeist, also known as ' +

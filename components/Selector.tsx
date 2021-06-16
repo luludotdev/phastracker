@@ -1,5 +1,6 @@
 import clsx from 'clsx'
-import { FC, useCallback, useMemo } from 'react'
+import { useCallback, useMemo } from 'react'
+import type { FC } from 'react'
 import { BORDER_RADIUS, SMALL_SIZE } from '~constants'
 import { Evidence } from '~data/evidence'
 import { useData } from '~hooks/useData'

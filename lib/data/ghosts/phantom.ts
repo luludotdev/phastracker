@@ -1,7 +1,7 @@
 import { Evidence } from '~data/evidence'
-import { IGhost } from '.'
+import type { Ghost } from '.'
 
-export const phantom: IGhost = {
+export const phantom: Ghost = {
   evidence: [Evidence.FREEZING, Evidence.EMF_5, Evidence.ORBS],
   description:
     'A Phantom is a ghost that can possess the living, most commonly summoned by a Ouija Board. ' +

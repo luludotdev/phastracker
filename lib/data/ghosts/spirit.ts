@@ -1,7 +1,7 @@
 import { Evidence } from '~data/evidence'
-import { IGhost } from '.'
+import type { Ghost } from '.'
 
-export const spirit: IGhost = {
+export const spirit: Ghost = {
   evidence: [Evidence.SPIRIT_BOX, Evidence.FINGERPRINTS, Evidence.WRITING],
   description:
     'The Spirit is the most common ghost you will come across, however it is still very powerful and dangerous. ' +

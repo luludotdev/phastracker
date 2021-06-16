@@ -1,5 +1,6 @@
 import { Evidence } from '~data/evidence'
-import { ghosts, GhostType, IGhost } from '~data/ghosts'
+import { ghosts } from '~data/ghosts'
+import type { Ghost, GhostType } from '~data/ghosts'
 import { useStore } from './useStore'
 
 export enum GhostState {
@@ -8,21 +9,21 @@ export enum GhostState {
   DISABLED,
 }
 
-export interface IRow extends IGhost {
+export interface Row extends Ghost {
   type: GhostType
   state: GhostState
 }
 
-interface IReturn {
-  ghosts: readonly IRow[]
+interface DataReturn {
+  ghosts: readonly Row[]
   enabledEvidence: Evidence[]
 }
 
-export const useData: () => IReturn = () => {
+export const useData: () => DataReturn = () => {
   const { state } = useStore()
 
   let confirmedEvidence: Evidence[] = []
-  const rows: IRow[] = Object.entries(ghosts).map(([type, x]) => ({
+  const rows: Row[] = Object.entries(ghosts).map(([type, x]) => ({
     ...x,
     type: type as GhostType,
     state: GhostState.NONE,

@@ -1,7 +1,7 @@
 import { Evidence } from '~data/evidence'
-import { IGhost } from '.'
+import type { Ghost } from '.'
 
-export const banshee: IGhost = {
+export const banshee: Ghost = {
   evidence: [Evidence.FINGERPRINTS, Evidence.FREEZING, Evidence.EMF_5],
   description:
     'A Banshee is a natural hunter and will attack anything. ' +

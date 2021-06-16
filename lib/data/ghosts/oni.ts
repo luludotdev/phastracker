@@ -1,7 +1,7 @@
 import { Evidence } from '~data/evidence'
-import { IGhost } from '.'
+import type { Ghost } from '.'
 
-export const oni: IGhost = {
+export const oni: Ghost = {
   evidence: [Evidence.SPIRIT_BOX, Evidence.WRITING, Evidence.EMF_5],
   description:
     'Onis are a cousin to the Demon and possess extreme strength. ' +

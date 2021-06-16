@@ -1,7 +1,7 @@
 import { Evidence } from '~data/evidence'
-import { IGhost } from '.'
+import type { Ghost } from '.'
 
-export const revenant: IGhost = {
+export const revenant: Ghost = {
   evidence: [Evidence.FINGERPRINTS, Evidence.WRITING, Evidence.EMF_5],
   description:
     'The Revenant is a slow but violent ghost that will attack indiscriminately. ' +
