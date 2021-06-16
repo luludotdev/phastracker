@@ -43,7 +43,7 @@ export const useData: () => IReturn = () => {
     .map(([x]) => x)
 
   for (const row of rows) {
-    const evidence = row.evidence
+    const { evidence } = row
     let hasAllEvidence = true
 
     for (const ev of ruledOut) {

@@ -11,10 +11,15 @@ const useMediaQueryClient = (query: string) => {
   const [matches, setMatches] = useState(mql.matches)
 
   useEffect(() => {
-    const listener = (event: MediaQueryListEvent) => setMatches(event.matches)
+    const listener = (event: MediaQueryListEvent) => {
+      setMatches(event.matches)
+    }
+
     mql.addEventListener('change', listener)
 
-    return () => mql.removeEventListener('change', listener)
+    return () => {
+      mql.removeEventListener('change', listener)
+    }
   }, [mql])
 
   return matches

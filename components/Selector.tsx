@@ -123,7 +123,9 @@ export const Selector: FC = () => {
                   type='checkbox'
                   checked={state.confirmed.get(evidence)}
                   disabled={disableConfirm}
-                  onChange={() => toggleConfirmed(evidence)}
+                  onChange={() => {
+                    toggleConfirmed(evidence)
+                  }}
                 />
               </td>
 
@@ -132,7 +134,9 @@ export const Selector: FC = () => {
                   type='checkbox'
                   checked={state.ruledOut.get(evidence)}
                   disabled={disableRuleOut}
-                  onChange={() => toggleRuledOut(evidence)}
+                  onChange={() => {
+                    toggleRuledOut(evidence)
+                  }}
                 />
               </td>
             </tr>

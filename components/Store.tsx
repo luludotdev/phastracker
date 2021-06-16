@@ -3,6 +3,7 @@ import {
   Dispatch,
   FunctionComponent,
   Reducer,
+  useMemo,
   useReducer,
 } from 'react'
 import { Evidence } from '~data/evidence'
@@ -69,7 +70,8 @@ export const Provider: FunctionComponent = ({ children }) => {
     initialState
   )
 
-  return <store.Provider value={{ state, dispatch }}>{children}</store.Provider>
+  const value = useMemo(() => ({ state, dispatch }), [state, dispatch])
+  return <store.Provider value={value}>{children}</store.Provider>
 }
 
 const setEvidence: (
