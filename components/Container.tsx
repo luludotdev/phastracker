@@ -9,7 +9,6 @@ export const Container: FC = ({ children }) => (
           display flex
           flex-direction column
           align-items center
-          height 100%
 
         .box
           width 100%
