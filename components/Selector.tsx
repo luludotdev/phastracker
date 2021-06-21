@@ -5,6 +5,7 @@ import { BORDER_RADIUS, SMALL_SIZE } from '~constants'
 import { Evidence } from '~data/evidence'
 import { useData } from '~hooks/useData'
 import { useStore } from '~hooks/useStore'
+import { Checkbox } from './Checkbox'
 
 export const Selector: FC = () => {
   const { state, dispatch } = useStore()
@@ -78,9 +79,6 @@ export const Selector: FC = () => {
             &.evidence
               text-align left
 
-            &.checkbox > input[type='checkbox']
-              cursor pointer
-
             &.reset:hover
               cursor pointer
               background-color rgba(255, 255, 255, 0.15)
@@ -120,9 +118,8 @@ export const Selector: FC = () => {
             <tr key={key}>
               <td className='evidence'>{evidence}</td>
               <td className={clsx('checkbox', disableConfirm && 'disabled')}>
-                <input
-                  type='checkbox'
-                  checked={state.confirmed.get(evidence)}
+                <Checkbox
+                  checked={state.confirmed.get(evidence) ?? false}
                   disabled={disableConfirm}
                   onChange={() => {
                     toggleConfirmed(evidence)
@@ -131,9 +128,8 @@ export const Selector: FC = () => {
               </td>
 
               <td className={clsx('checkbox', disableRuleOut && 'disabled')}>
-                <input
-                  type='checkbox'
-                  checked={state.ruledOut.get(evidence)}
+                <Checkbox
+                  checked={state.ruledOut.get(evidence) ?? false}
                   disabled={disableRuleOut}
                   onChange={() => {
                     toggleRuledOut(evidence)
