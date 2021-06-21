@@ -37,7 +37,7 @@ export const Row: FC<RowProps> = ({ type, evidence, state }) => {
               border-right 0
 
             border 1px solid rgb(80, 80, 80)
-            padding 0.35rem 0.6rem
+            padding 0.25rem 0.6rem
             text-align center
             background-color rgba(255, 255, 255, 0.08)
 
