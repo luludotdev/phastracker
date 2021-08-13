@@ -69,6 +69,6 @@ export const useData: () => DataReturn = () => {
 
   return {
     ghosts: rows,
-    enabledEvidence: [...new Set([...confirmedEvidence])],
+    enabledEvidence: [...new Set(confirmedEvidence)],
   }
 }

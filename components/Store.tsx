@@ -22,7 +22,7 @@ const initialState: State = {
   selected: GhostType.SPIRIT,
 }
 
-// @ts-expect-error
+// @ts-expect-error Does not include Dispatch
 export const store = createContext<Readonly<Context>>({ state: initialState })
 
 type Action =
@@ -73,7 +73,7 @@ const setEvidence: (
   type: Evidence,
   value: boolean
 ) => Map<Evidence, boolean> = (previous, type, value) => {
-  const clone = new Map([...previous.entries()])
+  const clone = new Map(previous.entries())
   clone.set(type, value)
 
   return clone

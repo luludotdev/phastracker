@@ -9,7 +9,6 @@ interface Props {
 export const RenderTip: FC<Props> = ({ tip }) => {
   const elements = useMemo(
     () =>
-      // eslint-disable-next-line unicorn/no-array-reduce
       tip.split('*').reduce<Array<string | JSX.Element>>((acc, curr, i) => {
         const key = `${i}-${curr}`
         return [...acc, i % 2 === 0 ? curr : <b key={key}>{curr}</b>]
