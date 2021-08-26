@@ -2,7 +2,7 @@ import { Evidence } from '~data/evidence'
 import type { Ghost } from '.'
 
 export const wraith: Ghost = {
-  evidence: [Evidence.SPIRIT_BOX, Evidence.FINGERPRINTS, Evidence.FREEZING],
+  evidence: [Evidence.EMF_5, Evidence.SPIRIT_BOX, Evidence.DOTS],
   description:
     'They are some of the most dangerous ghosts you will find. ' +
     'They are the only ghosts who can travel through walls and have the ability of flight.',

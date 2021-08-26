@@ -2,7 +2,7 @@ import { Evidence } from '~data/evidence'
 import type { Ghost } from '.'
 
 export const yurei: Ghost = {
-  evidence: [Evidence.WRITING, Evidence.FREEZING, Evidence.ORBS],
+  evidence: [Evidence.ORBS, Evidence.FREEZING, Evidence.DOTS],
   description:
     'The Yurei is a ghost that has returned to the physical world, ' +
     'usually for the purpose of revenge or hatred.',

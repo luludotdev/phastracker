@@ -2,7 +2,7 @@ import { Evidence } from '~data/evidence'
 import type { Ghost } from '.'
 
 export const oni: Ghost = {
-  evidence: [Evidence.SPIRIT_BOX, Evidence.WRITING, Evidence.EMF_5],
+  evidence: [Evidence.EMF_5, Evidence.FREEZING, Evidence.DOTS],
   description:
     'Onis are a cousin to the Demon and possess extreme strength. ' +
     'There have been rumours that they become more active around their prey.',

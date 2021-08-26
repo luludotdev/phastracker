@@ -2,7 +2,7 @@ import { Evidence } from '~data/evidence'
 import type { Ghost } from '.'
 
 export const banshee: Ghost = {
-  evidence: [Evidence.FINGERPRINTS, Evidence.FREEZING, Evidence.EMF_5],
+  evidence: [Evidence.FINGERPRINTS, Evidence.ORBS, Evidence.DOTS],
   description:
     'A Banshee is a natural hunter and will attack anything. ' +
     'It has been known to stalk its prey one at a time until making its kill.',

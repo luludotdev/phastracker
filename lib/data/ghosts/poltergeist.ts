@@ -2,7 +2,7 @@ import { Evidence } from '~data/evidence'
 import type { Ghost } from '.'
 
 export const poltergeist: Ghost = {
-  evidence: [Evidence.SPIRIT_BOX, Evidence.FINGERPRINTS, Evidence.ORBS],
+  evidence: [Evidence.SPIRIT_BOX, Evidence.FINGERPRINTS, Evidence.WRITING],
   description:
     'One of the most famous types of ghost, the Poltergeist, also known as ' +
     'the noisy ghost, can manipulate objects around it to spread fear into its victims.',

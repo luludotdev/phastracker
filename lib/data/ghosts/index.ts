@@ -1,9 +1,11 @@
 import type { Evidence } from '~data/evidence'
 import { banshee } from './banshee'
 import { demon } from './demon'
+import { goryo } from './goryo'
 import { hantu } from './hantu'
 import { jinn } from './jinn'
 import { mare } from './mare'
+import { myling } from './myling'
 import { oni } from './oni'
 import { phantom } from './phantom'
 import { poltergeist } from './poltergeist'
@@ -17,9 +19,11 @@ import { yurei } from './yurei'
 export enum GhostType {
   BANSHEE = 'Banshee',
   DEMON = 'Demon',
+  GORYO = 'Goryo',
   HANTU = 'Hantu',
   JINN = 'Jinn',
   MARE = 'Mare',
+  MYLING = 'Myling',
   ONI = 'Oni',
   PHANTOM = 'Phantom',
   POLTERGEIST = 'Poltergeist',
@@ -55,4 +59,6 @@ export const ghosts: GhostMap = {
   [GhostType.ONI]: oni,
   [GhostType.HANTU]: hantu,
   [GhostType.YOKAI]: yokai,
+  [GhostType.GORYO]: goryo,
+  [GhostType.MYLING]: myling,
 }

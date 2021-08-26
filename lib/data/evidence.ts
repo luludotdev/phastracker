@@ -5,4 +5,5 @@ export enum Evidence {
   FREEZING = 'Freezing Temperatures',
   EMF_5 = 'EMF Level 5',
   ORBS = 'Ghost Orbs',
+  DOTS = 'D.O.T.S. Projector',
 }

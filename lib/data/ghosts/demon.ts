@@ -2,7 +2,7 @@ import { Evidence } from '~data/evidence'
 import type { Ghost } from '.'
 
 export const demon: Ghost = {
-  evidence: [Evidence.SPIRIT_BOX, Evidence.WRITING, Evidence.FREEZING],
+  evidence: [Evidence.FINGERPRINTS, Evidence.WRITING, Evidence.FREEZING],
   description:
     'The Demon is one of the worst ghosts you can encounter. ' +
     'It has been known to attack without a reason.',

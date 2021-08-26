@@ -2,7 +2,7 @@ import { Evidence } from '~data/evidence'
 import type { Ghost } from '.'
 
 export const spirit: Ghost = {
-  evidence: [Evidence.SPIRIT_BOX, Evidence.FINGERPRINTS, Evidence.WRITING],
+  evidence: [Evidence.EMF_5, Evidence.SPIRIT_BOX, Evidence.WRITING],
   description:
     'The Spirit is the most common ghost you will come across, however it is still very powerful and dangerous. ' +
     'They are usually discovered at one of their hunting grounds after an unexplained death.',

@@ -2,7 +2,7 @@ import { Evidence } from '~data/evidence'
 import type { Ghost } from '.'
 
 export const jinn: Ghost = {
-  evidence: [Evidence.SPIRIT_BOX, Evidence.EMF_5, Evidence.ORBS],
+  evidence: [Evidence.EMF_5, Evidence.FINGERPRINTS, Evidence.FREEZING],
   description:
     'The Jinn is a territorial ghost that will attack when threatened. ' +
     'It has also been known to be able to travel at significant speed.',
