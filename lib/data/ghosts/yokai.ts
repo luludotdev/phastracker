@@ -4,7 +4,7 @@ import type { Ghost } from '.'
 export const yokai: Ghost = {
   evidence: [Evidence.SPIRIT_BOX, Evidence.ORBS, Evidence.DOTS],
   description:
-    'A Yokai is a common type of ghost that is attracted to human voices. ' +
+    'The Yokai is a common type of ghost that is attracted to human voices. ' +
     'They can usually be found haunting family homes.',
   strength:
     'Talking near a Yokai will anger it and increase its chance at attacking.',
