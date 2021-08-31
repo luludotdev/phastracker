@@ -14,15 +14,23 @@ export const Profile: FC = () => {
   }, [state.selected])
 
   return (
-    <div className='profile'>
-      <h2>{state.selected}</h2>
-      <p>{ghost.description}</p>
-
-      <h2>Strength</h2>
-      <p>{ghost.strength}</p>
-
-      <h2>Weakness</h2>
-      <p>{ghost.weakness}</p>
+    <div>
+      <Entry title={state.selected} body={ghost.description} />
+      <Entry title='Strength' body={ghost.strength} />
+      <Entry title='Weakness' body={ghost.weakness} />
     </div>
   )
 }
+
+interface Props {
+  title: string
+  body: string
+  children?: never
+}
+
+const Entry: FC<Props> = ({ title, body }) => (
+  <div className='mb-5 last:mb-0'>
+    <h2 className='font-semibold text-2xl mb-[2px]'>{title}</h2>
+    <p>{body}</p>
+  </div>
+)

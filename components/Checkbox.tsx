@@ -18,6 +18,7 @@ export const Checkbox: FC<Props> = ({ checked, disabled, onChange }) => {
 
   return (
     <input
+      className='form-checkbox rounded cursor-pointer disabled:opacity-30 disabled:cursor-default'
       type='checkbox'
       checked={checked}
       disabled={disabled}

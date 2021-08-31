@@ -6,8 +6,8 @@ export const Table: FC = () => {
   const { ghosts } = useData()
 
   return (
-    <div className='container'>
-      <table>
+    <div className='shadow-lg overflow-hidden rounded-lg border border-gray-900 border-opacity-50'>
+      <table className='w-full'>
         <tbody>
           {ghosts.map(ghost => (
             <Row key={ghost.type} {...ghost} />

@@ -48,21 +48,31 @@ export const Selector: FC = () => {
   }, [state.confirmed, state.ruledOut, enabledEvidence])
 
   return (
-    <div className='container'>
-      <table>
+    <div className='shadow-lg h-[fit-content] overflow-hidden rounded-lg border border-gray-900 border-opacity-50'>
+      <table className='w-full text-center'>
         <thead>
-          <tr>
-            <th className='evidence'>Evidence</th>
-            <th>Confirmed</th>
-            <th>Ruled Out</th>
+          <tr className='bg-gray-700 border-b border-gray-900 border-opacity-50'>
+            <th className='text-left pl-3 py-1 pt-[6px]'>Evidence</th>
+            <th className='px-2 py-1 pt-[6px] border-l border-r border-gray-900 border-opacity-50'>
+              Confirmed
+            </th>
+            <th className='px-2 py-1 pr-2 pt-[6px]'>Ruled Out</th>
           </tr>
         </thead>
 
         <tbody>
           {entries.map(([key, evidence, disableConfirm, disableRuleOut]) => (
-            <tr key={key}>
-              <td className='evidence'>{evidence}</td>
-              <td className={clsx('checkbox', disableConfirm && 'disabled')}>
+            <tr
+              key={key}
+              className='bg-gray-700 border-b border-gray-900 border-opacity-50'
+            >
+              <td className='text-left px-3 py-[5px] text-sm'>{evidence}</td>
+              <td
+                className={clsx(
+                  'pb-1 border-l border-r border-gray-900 border-opacity-50',
+                  disableConfirm && 'disabled'
+                )}
+              >
                 <Checkbox
                   checked={state.confirmed.get(evidence) ?? false}
                   disabled={disableConfirm}
@@ -72,7 +82,7 @@ export const Selector: FC = () => {
                 />
               </td>
 
-              <td className={clsx('checkbox', disableRuleOut && 'disabled')}>
+              <td className={clsx('pb-1', disableRuleOut && 'disabled')}>
                 <Checkbox
                   checked={state.ruledOut.get(evidence) ?? false}
                   disabled={disableRuleOut}
@@ -84,8 +94,8 @@ export const Selector: FC = () => {
             </tr>
           ))}
 
-          <tr onClick={resetClicked}>
-            <td className='reset' colSpan={3}>
+          <tr className='bg-gray-700' onClick={resetClicked}>
+            <td colSpan={3} className='py-2 cursor-pointer hover:bg-gray-600'>
               <b>Reset</b>
             </td>
           </tr>

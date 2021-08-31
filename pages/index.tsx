@@ -1,5 +1,5 @@
 import { GetServerSideProps, NextPage } from 'next'
-import { Container } from '~components/Container'
+import colors from 'tailwindcss/colors'
 import { Meta } from '~components/Meta'
 import { Profile } from '~components/Profile'
 import { RenderTip } from '~components/RenderTip'
@@ -20,22 +20,35 @@ const App: NextPage<Props> = ({ tip }) => (
       colour='#111111'
     />
 
-    <Container>
-      <h1>Phasmophobia Evidence Tracker</h1>
-      <p className='tip'>
-        Tip: <RenderTip tip={tip} />
-      </p>
+    <style jsx global>
+      {`
+        body {
+          background-color: ${colors.gray['900']};
+        }
+      `}
+    </style>
 
-      <div className='horizontal'>
-        <Selector />
+    <div className='flex justify-center w-full py-4'>
+      <div className='w-full max-w-full md:max-w-3xl lg:max-w-5xl xl:max-w-7xl p-6 pt-5 rounded-lg shadow-lg text-white bg-gray-800'>
+        <h1 className='font-medium text-3xl text-center mb-1'>
+          Phasmophobia Evidence Tracker
+        </h1>
 
-        <div className='profile'>
-          <Profile />
+        <p className='text-gray-300 italic text-sm text-center mb-6'>
+          Tip: <RenderTip tip={tip} />
+        </p>
+
+        <div className='flex mb-5'>
+          <Selector />
+
+          <div className='flex-1 ml-6'>
+            <Profile />
+          </div>
         </div>
-      </div>
 
-      <Table />
-    </Container>
+        <Table />
+      </div>
+    </div>
   </>
 )
 
