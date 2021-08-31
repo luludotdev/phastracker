@@ -10,7 +10,12 @@ export default class NextDocument extends Document {
   render() {
     return (
       <Html lang='en'>
-        <Head />
+        <Head>
+          <link
+            href='https://fonts.googleapis.com/css2?family=Inter&display=swap'
+            rel='stylesheet'
+          />
+        </Head>
 
         <body>
           <Main />
