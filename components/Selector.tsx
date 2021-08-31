@@ -72,6 +72,9 @@ export const Selector: FC = () => {
                   'pb-1 border-l border-r border-gray-900 border-opacity-50',
                   disableConfirm && 'disabled'
                 )}
+                onClick={() => {
+                  toggleConfirmed(evidence)
+                }}
               >
                 <Checkbox
                   checked={state.confirmed.get(evidence) ?? false}
@@ -82,7 +85,12 @@ export const Selector: FC = () => {
                 />
               </td>
 
-              <td className={clsx('pb-1', disableRuleOut && 'disabled')}>
+              <td
+                className={clsx('pb-1', disableRuleOut && 'disabled')}
+                onClick={() => {
+                  toggleConfirmed(evidence)
+                }}
+              >
                 <Checkbox
                   checked={state.ruledOut.get(evidence) ?? false}
                   disabled={disableRuleOut}
