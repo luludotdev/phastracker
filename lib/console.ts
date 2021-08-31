@@ -1,7 +1,5 @@
-import { IS_SERVER } from '~constants'
-
 export const showMessage = () => {
-  if (IS_SERVER) return
+  if (typeof window === undefined) return
 
   console.group('%cPhastracker', 'color: #0e74cd; font-size: 2rem')
   console.log(

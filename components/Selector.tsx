@@ -1,7 +1,6 @@
 import clsx from 'clsx'
 import { useCallback, useMemo } from 'react'
 import type { FC } from 'react'
-import { BORDER_RADIUS, SMALL_SIZE } from '~constants'
 import { Evidence } from '~data/evidence'
 import { useData } from '~hooks/useData'
 import { useStore } from '~hooks/useStore'
@@ -50,60 +49,6 @@ export const Selector: FC = () => {
 
   return (
     <div className='container'>
-      <style jsx>
-        {`
-          $border-radius = ${BORDER_RADIUS}
-
-          .container
-            border-radius $border-radius
-            border 1px solid rgb(80, 80, 80)
-
-          table
-            width 100%
-            border-collapse collapse
-
-          td, th
-            &:first-child
-              border-left 0
-            &:last-child
-              border-right 0
-
-            border 1px solid rgb(80, 80, 80)
-            padding 0.25rem 0.6rem
-            text-align center
-            background-color rgba(255, 255, 255, 0.08)
-
-            @media only screen and (max-width ${SMALL_SIZE})
-              font-size 0.9rem
-
-            &.evidence
-              text-align left
-
-            &.reset:hover
-              cursor pointer
-              background-color rgba(255, 255, 255, 0.15)
-
-            &.disabled
-              background-color rgba(255, 255, 255, 0.02)
-
-          tr:first-child
-            & > th
-              border-top 0
-              &:first-child
-                border-top-left-radius $border-radius
-              &:last-child
-                border-top-right-radius $border-radius
-
-          tr:last-child
-            & > td
-              border-bottom 0
-              &:first-child
-                border-bottom-left-radius $border-radius
-              &:last-child
-                border-bottom-right-radius $border-radius
-        `}
-      </style>
-
       <table>
         <thead>
           <tr>

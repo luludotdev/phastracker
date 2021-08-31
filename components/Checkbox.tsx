@@ -17,23 +17,11 @@ export const Checkbox: FC<Props> = ({ checked, disabled, onChange }) => {
   )
 
   return (
-    <>
-      <style jsx>
-        {`
-          input[type='checkbox']
-            cursor pointer
-
-            &:disabled
-              cursor initial
-      `}
-      </style>
-
-      <input
-        type='checkbox'
-        checked={checked}
-        disabled={disabled}
-        onChange={handleChange}
-      />
-    </>
+    <input
+      type='checkbox'
+      checked={checked}
+      disabled={disabled}
+      onChange={handleChange}
+    />
   )
 }
