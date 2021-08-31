@@ -29,12 +29,12 @@ const App: NextPage<Props> = ({ tip }) => (
     </style>
 
     <div className='flex justify-center w-full py-4'>
-      <div className='w-full max-w-full md:max-w-3xl lg:max-w-5xl xl:max-w-7xl p-6 pt-5 rounded-lg shadow-lg text-white bg-gray-800'>
+      <div className='w-full max-w-full md:max-w-3xl lg:max-w-5xl xl:max-w-7xl p-6 pt-4 rounded-lg shadow-lg text-white bg-gray-800'>
         <h1 className='font-medium text-3xl text-center mb-1'>
           Phasmophobia Evidence Tracker
         </h1>
 
-        <p className='text-gray-300 italic text-sm text-center mb-6'>
+        <p className='text-gray-300 italic text-sm text-center mb-4'>
           Tip: <RenderTip tip={tip} />
         </p>
 
