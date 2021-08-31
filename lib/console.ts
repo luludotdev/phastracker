@@ -1,5 +1,5 @@
 export const showMessage = () => {
-  if (typeof window === undefined) return
+  if (typeof window === 'undefined') return
 
   console.group('%cPhastracker', 'color: #0e74cd; font-size: 2rem')
   console.log(
