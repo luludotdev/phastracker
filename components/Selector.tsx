@@ -52,11 +52,11 @@ export const Selector: FC = () => {
       <table className='w-full text-center'>
         <thead>
           <tr className='bg-gray-700 border-b border-gray-900 border-opacity-50'>
-            <th className='text-left pl-3 py-1 pt-[6px]'>Evidence</th>
-            <th className='px-2 py-1 pt-[6px] border-l border-r border-gray-900 border-opacity-50'>
+            <th className='text-left px-3 py-1 pt-[6px]'>Evidence</th>
+            <th className='px-3 py-1 pt-[6px] border-l border-r border-gray-900 border-opacity-50'>
               Confirmed
             </th>
-            <th className='px-2 py-1 pr-2 pt-[6px]'>Ruled Out</th>
+            <th className='px-3 py-1 pt-[6px]'>Ruled Out</th>
           </tr>
         </thead>
 
