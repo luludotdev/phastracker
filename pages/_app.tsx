@@ -1,6 +1,7 @@
 import { showMessage } from 'lib/console'
 import type { AppProps } from 'next/app'
 import { Provider } from '~components/Store'
+import 'tailwindcss/tailwind.css'
 
 showMessage()
 
