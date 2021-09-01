@@ -103,7 +103,10 @@ export const Selector: FC = () => {
           ))}
 
           <tr className='bg-gray-700' onClick={resetClicked}>
-            <td colSpan={3} className='py-2 cursor-pointer hover:bg-gray-600'>
+            <td
+              colSpan={3}
+              className='py-2 cursor-pointer hover:bg-gray-600 duration-75 motion-safe:transition-colors'
+            >
               <b>Reset</b>
             </td>
           </tr>

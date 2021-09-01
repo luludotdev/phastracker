@@ -20,7 +20,7 @@ export const Row: FC<RowProps> = ({ type, evidence, state }) => {
   return (
     <tr
       className={clsx(
-        'text-center bg-gray-700 border-b last:border-b-0 border-gray-900 border-opacity-50',
+        'text-center bg-gray-700 border-b last:border-b-0 border-gray-900 border-opacity-50 motion-safe:transition-all',
         isDisabled && 'bg-opacity-20 text-white text-opacity-50'
       )}
     >
