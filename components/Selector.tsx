@@ -73,14 +73,14 @@ export const Selector: FC = () => {
                   disableConfirm && 'disabled'
                 )}
                 onClick={() => {
-                  toggleConfirmed(evidence)
+                  if (!disableConfirm) toggleConfirmed(evidence)
                 }}
               >
                 <Checkbox
                   checked={state.confirmed.get(evidence) ?? false}
                   disabled={disableConfirm}
                   onChange={() => {
-                    toggleConfirmed(evidence)
+                    if (!disableConfirm) toggleConfirmed(evidence)
                   }}
                 />
               </td>
@@ -88,14 +88,14 @@ export const Selector: FC = () => {
               <td
                 className={clsx('pb-1', disableRuleOut && 'disabled')}
                 onClick={() => {
-                  toggleRuledOut(evidence)
+                  if (!disableRuleOut) toggleRuledOut(evidence)
                 }}
               >
                 <Checkbox
                   checked={state.ruledOut.get(evidence) ?? false}
                   disabled={disableRuleOut}
                   onChange={() => {
-                    toggleRuledOut(evidence)
+                    if (!disableRuleOut) toggleRuledOut(evidence)
                   }}
                 />
               </td>
