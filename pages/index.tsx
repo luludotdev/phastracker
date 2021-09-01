@@ -28,8 +28,8 @@ const App: NextPage<Props> = ({ tip }) => (
       `}
     </style>
 
-    <div className='flex justify-center w-full py-4'>
-      <div className='w-full max-w-full md:max-w-3xl lg:max-w-5xl xl:max-w-7xl p-6 pt-4 rounded-lg shadow-lg text-white bg-gray-800'>
+    <div className='flex justify-center w-full py-0 lg:py-4'>
+      <div className='w-full max-w-full lg:max-w-5xl xl:max-w-7xl p-6 pt-4 lg:rounded-lg shadow-lg text-white bg-gray-800'>
         <h1 className='font-medium text-3xl text-center mb-1'>
           Phasmophobia Evidence Tracker
         </h1>
@@ -38,10 +38,10 @@ const App: NextPage<Props> = ({ tip }) => (
           Tip: <RenderTip tip={tip} />
         </p>
 
-        <div className='flex mb-5'>
+        <div className='flex flex-col md:flex-row mb-5'>
           <Selector />
 
-          <div className='flex-1 ml-6'>
+          <div className='flex-1 md:ml-6 mt-6 md:mt-0'>
             <Profile />
           </div>
         </div>
