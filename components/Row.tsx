@@ -35,8 +35,9 @@ export const Row: FC<RowProps> = ({ type, evidence, state }) => {
         <td
           key={key}
           className={clsx(
-            'text-sm border-l border-gray-900 border-opacity-50',
-            !evidence.includes(ev) && 'hidden lg:table-cell'
+            'text-sm border-l border-gray-900 border-opacity-50 hidden',
+            evidence.includes(ev) && 'md:table-cell',
+            !evidence.includes(ev) && 'lg:table-cell'
           )}
         >
           {evidence.includes(ev) ? ev : ''}
