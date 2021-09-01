@@ -88,7 +88,7 @@ export const Selector: FC = () => {
               <td
                 className={clsx('pb-1', disableRuleOut && 'disabled')}
                 onClick={() => {
-                  toggleConfirmed(evidence)
+                  toggleRuledOut(evidence)
                 }}
               >
                 <Checkbox
