@@ -6,12 +6,16 @@ import { hantu } from './hantu'
 import { jinn } from './jinn'
 import { mare } from './mare'
 import { myling } from './myling'
+import { obake } from './obake'
 import { oni } from './oni'
+import { onryo } from './onryo'
 import { phantom } from './phantom'
 import { poltergeist } from './poltergeist'
+import { raiju } from './raiju'
 import { revenant } from './revenant'
 import { shade } from './shade'
 import { spirit } from './spirit'
+import { twins } from './twins'
 import { wraith } from './wraith'
 import { yokai } from './yokai'
 import { yurei } from './yurei'
@@ -24,12 +28,16 @@ export enum GhostType {
   JINN = 'Jinn',
   MARE = 'Mare',
   MYLING = 'Myling',
+  OBAKE = 'Obake',
   ONI = 'Oni',
+  ONRYO = 'Onryo',
   PHANTOM = 'Phantom',
   POLTERGEIST = 'Poltergeist',
+  RAIJU = 'Raiju',
   REVENANT = 'Revenant',
   SHADE = 'Shade',
   SPIRIT = 'Spirit',
+  TWINS = 'The Twins',
   WRAITH = 'Wraith',
   YOKAI = 'Yokai',
   YUREI = 'Yurei',
@@ -61,4 +69,8 @@ export const ghosts: GhostMap = {
   [GhostType.YOKAI]: yokai,
   [GhostType.GORYO]: goryo,
   [GhostType.MYLING]: myling,
+  [GhostType.ONRYO]: onryo,
+  [GhostType.TWINS]: twins,
+  [GhostType.RAIJU]: raiju,
+  [GhostType.OBAKE]: obake,
 }
