@@ -1,9 +1,9 @@
 export enum Evidence {
-  SPIRIT_BOX = 'Spirit Box',
-  FINGERPRINTS = 'Fingerprints',
-  WRITING = 'Ghost Writing',
-  FREEZING = 'Freezing Temperatures',
   EMF_5 = 'EMF Level 5',
-  ORBS = 'Ghost Orbs',
   DOTS = 'D.O.T.S. Projector',
+  FINGERPRINTS = 'Fingerprints',
+  ORBS = 'Ghost Orbs',
+  WRITING = 'Ghost Writing',
+  SPIRIT_BOX = 'Spirit Box',
+  FREEZING = 'Freezing Temperatures',
 }
