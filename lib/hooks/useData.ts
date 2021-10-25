@@ -16,7 +16,7 @@ export interface Row extends Ghost {
 
 interface DataReturn {
   ghosts: readonly Row[]
-  enabledEvidence: Evidence[]
+  enabledEvidence: readonly Evidence[]
 }
 
 export const useData: () => DataReturn = () => {
