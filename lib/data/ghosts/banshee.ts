@@ -1,7 +1,7 @@
 import { Evidence } from '~data/evidence'
 import type { Ghost } from '.'
 
-export const banshee: Ghost = {
+export const banshee: Readonly<Ghost> = {
   evidence: [Evidence.FINGERPRINTS, Evidence.ORBS, Evidence.DOTS],
   description:
     'The Banshee is a natural hunter and will attack anything. ' +

@@ -43,7 +43,7 @@ export interface Ghost {
   weakness: string
 }
 
-type GhostMap = { [key in GhostType]: Ghost }
+type GhostMap = { [key in GhostType]: Readonly<Ghost> }
 export const ghosts: GhostMap = {
   [GhostType.SPIRIT]: spirit,
   [GhostType.WRAITH]: wraith,

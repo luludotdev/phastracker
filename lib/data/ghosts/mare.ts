@@ -1,7 +1,7 @@
 import { Evidence } from '~data/evidence'
 import type { Ghost } from '.'
 
-export const mare: Ghost = {
+export const mare: Readonly<Ghost> = {
   evidence: [Evidence.SPIRIT_BOX, Evidence.ORBS, Evidence.WRITING],
   description:
     'The Mare is the source of all nightmares, making them most powerful in the dark.',

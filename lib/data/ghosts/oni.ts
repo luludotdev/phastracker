@@ -1,7 +1,7 @@
 import { Evidence } from '~data/evidence'
 import type { Ghost } from '.'
 
-export const oni: Ghost = {
+export const oni: Readonly<Ghost> = {
   evidence: [Evidence.EMF_5, Evidence.FREEZING, Evidence.DOTS],
   description:
     'Onis are a cousin to the Demon and possess extreme strength. ' +

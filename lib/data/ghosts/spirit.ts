@@ -1,7 +1,7 @@
 import { Evidence } from '~data/evidence'
 import type { Ghost } from '.'
 
-export const spirit: Ghost = {
+export const spirit: Readonly<Ghost> = {
   evidence: [Evidence.EMF_5, Evidence.SPIRIT_BOX, Evidence.WRITING],
   description:
     'The Spirit is the most common ghost you will come across, however they are still very powerful and dangerous. ' +

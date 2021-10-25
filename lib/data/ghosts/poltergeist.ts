@@ -1,7 +1,7 @@
 import { Evidence } from '~data/evidence'
 import type { Ghost } from '.'
 
-export const poltergeist: Ghost = {
+export const poltergeist: Readonly<Ghost> = {
   evidence: [Evidence.SPIRIT_BOX, Evidence.FINGERPRINTS, Evidence.WRITING],
   description:
     'One of the most famous types of ghost, the Poltergeist, also known as ' +

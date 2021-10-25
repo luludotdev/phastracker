@@ -1,7 +1,7 @@
 import { Evidence } from '~data/evidence'
 import type { Ghost } from '.'
 
-export const phantom: Ghost = {
+export const phantom: Readonly<Ghost> = {
   evidence: [Evidence.SPIRIT_BOX, Evidence.FINGERPRINTS, Evidence.DOTS],
   description:
     'A Phantom is a ghost that can possess the living, most commonly summoned by a Ouija Board. ' +

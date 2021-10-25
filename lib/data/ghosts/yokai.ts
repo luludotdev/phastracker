@@ -1,7 +1,7 @@
 import { Evidence } from '~data/evidence'
 import type { Ghost } from '.'
 
-export const yokai: Ghost = {
+export const yokai: Readonly<Ghost> = {
   evidence: [Evidence.SPIRIT_BOX, Evidence.ORBS, Evidence.DOTS],
   description:
     'The Yokai is a common type of ghost that is attracted to human voices. ' +

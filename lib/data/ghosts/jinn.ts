@@ -1,7 +1,7 @@
 import { Evidence } from '~data/evidence'
 import type { Ghost } from '.'
 
-export const jinn: Ghost = {
+export const jinn: Readonly<Ghost> = {
   evidence: [Evidence.EMF_5, Evidence.FINGERPRINTS, Evidence.FREEZING],
   description:
     'The Jinn is a territorial ghost that will attack when threatened. ' +

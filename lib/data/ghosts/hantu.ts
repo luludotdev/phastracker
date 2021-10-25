@@ -1,7 +1,7 @@
 import { Evidence } from '~data/evidence'
 import type { Ghost } from '.'
 
-export const hantu: Ghost = {
+export const hantu: Readonly<Ghost> = {
   evidence: [Evidence.FINGERPRINTS, Evidence.ORBS, Evidence.FREEZING],
   description:
     'The Hantu is a rare type of ghost that can be found in hot climates. ' +
