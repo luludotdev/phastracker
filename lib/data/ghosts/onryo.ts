@@ -1,7 +1,7 @@
-import { Evidence } from '~data/evidence'
-import type { Ghost } from '.'
+import { Evidence } from '~/lib/data/evidence'
+import type { Ghost } from '~/lib/data/ghosts'
 
-export const onryo: Readonly<Ghost> = {
+export const onryo: Ghost = {
   evidence: [Evidence.SPIRIT_BOX, Evidence.ORBS, Evidence.FREEZING],
   description:
     'The Onryo is often referred to as "The Wrathful Spirit". ' +

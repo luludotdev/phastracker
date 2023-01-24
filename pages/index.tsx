@@ -1,47 +1,33 @@
-import { GetServerSideProps, NextPage } from 'next'
-import colors from 'tailwindcss/colors'
-import { Meta } from '~components/Meta'
-import { Profile } from '~components/Profile'
-import { RenderTip } from '~components/RenderTip'
-import { Selector } from '~components/Selector'
-import { Table } from '~components/Table'
-import { randomTip } from '~data/tips'
-import type { Tip } from '~data/tips'
+import type { NextPage } from 'next'
+import { Meta } from '~/components/Meta'
+import { Profile } from '~/components/Profile'
+import { RenderTip } from '~/components/RenderTip'
+import { Selector } from '~/components/Selector'
+import { Table } from '~/components/Table'
+import { Tip } from '~/lib/data/tips'
 
-interface Props {
-  tip: Tip
-}
-
-const App: NextPage<Props> = ({ tip }) => (
+const App: NextPage = () => (
   <>
     <Meta
-      siteName='Phastracker'
-      description='Phasmophobia Evidence Tracker'
       colour='#111111'
+      description='Phasmophobia Evidence Tracker'
+      siteName='Phastracker'
     />
 
-    <style jsx global>
-      {`
-        body {
-          background-color: ${colors.gray['900']};
-        }
-      `}
-    </style>
-
-    <div className='flex justify-center w-full py-0 lg:py-4'>
-      <div className='w-full max-w-full lg:max-w-5xl xl:max-w-7xl p-6 pt-4 lg:rounded-lg shadow-lg text-white bg-gray-800'>
-        <h1 className='font-medium text-3xl text-center mb-1'>
+    <div className='flex w-full justify-center py-0 lg:py-4'>
+      <div className='w-full max-w-full bg-zinc-800 p-6 pt-4 text-white shadow-lg lg:max-w-5xl lg:rounded-lg xl:max-w-7xl'>
+        <h1 className='mb-1 text-center text-3xl font-medium'>
           Phasmophobia Evidence Tracker
         </h1>
 
-        <p className='text-gray-300 italic text-sm text-center mb-4'>
-          Tip: <RenderTip tip={tip} />
+        <p className='mb-4 text-center text-sm italic text-zinc-300'>
+          Tip: <RenderTip tip={Tip.OUTDATED} />
         </p>
 
-        <div className='flex flex-col md:flex-row mb-5'>
+        <div className='mb-5 flex flex-col md:flex-row'>
           <Selector />
 
-          <div className='flex-1 md:ml-6 mt-6 md:mt-0'>
+          <div className='mt-6 flex-1 md:ml-6 md:mt-0'>
             <Profile />
           </div>
         </div>
@@ -51,10 +37,5 @@ const App: NextPage<Props> = ({ tip }) => (
     </div>
   </>
 )
-
-export const getServerSideProps: GetServerSideProps<Props> = async () => {
-  const tip = randomTip()
-  return { props: { tip } }
-}
 
 export default App

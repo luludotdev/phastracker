@@ -1,7 +1,7 @@
-import { Evidence } from '~data/evidence'
-import type { Ghost } from '.'
+import { Evidence } from '~/lib/data/evidence'
+import type { Ghost } from '~/lib/data/ghosts'
 
-export const yurei: Readonly<Ghost> = {
+export const yurei: Ghost = {
   evidence: [Evidence.ORBS, Evidence.FREEZING, Evidence.DOTS],
   description:
     'The Yurei is a type ghost that has returned to the physical world, ' +

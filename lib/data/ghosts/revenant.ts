@@ -1,7 +1,7 @@
-import { Evidence } from '~data/evidence'
-import type { Ghost } from '.'
+import { Evidence } from '~/lib/data/evidence'
+import type { Ghost } from '~/lib/data/ghosts'
 
-export const revenant: Readonly<Ghost> = {
+export const revenant: Ghost = {
   evidence: [Evidence.ORBS, Evidence.WRITING, Evidence.FREEZING],
   description:
     'The Revenant is a slow but violent ghost that will attack indiscriminately. ' +

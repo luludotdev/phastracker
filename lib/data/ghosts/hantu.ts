@@ -1,7 +1,7 @@
-import { Evidence } from '~data/evidence'
-import type { Ghost } from '.'
+import { Evidence } from '~/lib/data/evidence'
+import type { Ghost } from '~/lib/data/ghosts'
 
-export const hantu: Readonly<Ghost> = {
+export const hantu: Ghost = {
   evidence: [Evidence.FINGERPRINTS, Evidence.ORBS, Evidence.FREEZING],
   description:
     'The Hantu is a rare type of ghost that can be found in hot climates. ' +

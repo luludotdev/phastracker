@@ -1,4 +1,3 @@
-import type { Evidence } from '~data/evidence'
 import { banshee } from './banshee'
 import { demon } from './demon'
 import { goryo } from './goryo'
@@ -19,6 +18,7 @@ import { twins } from './twins'
 import { wraith } from './wraith'
 import { yokai } from './yokai'
 import { yurei } from './yurei'
+import type { Evidence } from '~/lib/data/evidence'
 
 export enum GhostType {
   BANSHEE = 'Banshee',
@@ -44,14 +44,14 @@ export enum GhostType {
 }
 
 export interface Ghost {
-  description: string
-  evidence: readonly [Evidence, Evidence, Evidence]
+  readonly description: string
+  readonly evidence: readonly [Evidence, Evidence, Evidence]
 
-  strength: string
-  weakness: string
+  readonly strength: string
+  readonly weakness: string
 }
 
-type GhostMap = { [key in GhostType]: Readonly<Ghost> }
+type GhostMap = { [key in GhostType]: Ghost }
 export const ghosts: GhostMap = {
   [GhostType.SPIRIT]: spirit,
   [GhostType.WRAITH]: wraith,

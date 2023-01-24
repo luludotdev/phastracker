@@ -1,7 +1,7 @@
-import { Evidence } from '~data/evidence'
-import type { Ghost } from '.'
+import { Evidence } from '~/lib/data/evidence'
+import type { Ghost } from '~/lib/data/ghosts'
 
-export const banshee: Readonly<Ghost> = {
+export const banshee: Ghost = {
   evidence: [Evidence.FINGERPRINTS, Evidence.ORBS, Evidence.DOTS],
   description:
     'The Banshee is a natural hunter and will attack anything. ' +

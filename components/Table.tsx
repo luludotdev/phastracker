@@ -1,12 +1,12 @@
 import type { FC } from 'react'
-import { useData } from '~hooks/useData'
-import { Row } from './Row'
+import { Row } from '~/components/Row'
+import { useData } from '~/lib/hooks/useData'
 
 export const Table: FC = () => {
   const { ghosts } = useData()
 
   return (
-    <div className='shadow-lg overflow-hidden rounded-lg border border-gray-900 border-opacity-50'>
+    <div className='overflow-hidden rounded-lg border border-zinc-900 border-opacity-50 shadow-lg'>
       <table className='w-full'>
         <tbody>
           {ghosts.map(ghost => (

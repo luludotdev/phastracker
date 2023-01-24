@@ -1,7 +1,7 @@
-import { Evidence } from '~data/evidence'
-import type { Ghost } from '.'
+import { Evidence } from '~/lib/data/evidence'
+import type { Ghost } from '~/lib/data/ghosts'
 
-export const shade: Readonly<Ghost> = {
+export const shade: Ghost = {
   evidence: [Evidence.EMF_5, Evidence.WRITING, Evidence.FREEZING],
   description:
     'The Shade is known to be a shy ghost. There is evidence that a ' +

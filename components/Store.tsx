@@ -1,7 +1,14 @@
-import { createContext, useMemo, useReducer } from 'react'
-import type { Dispatch, FC, Reducer } from 'react'
-import { Evidence } from '~data/evidence'
-import { GhostType } from '~data/ghosts'
+import {
+  createContext,
+  type Dispatch,
+  type FC,
+  type PropsWithChildren,
+  type Reducer,
+  useMemo,
+  useReducer,
+} from 'react'
+import { Evidence } from '~/lib/data/evidence'
+import { GhostType } from '~/lib/data/ghosts'
 
 interface State {
   confirmed: Map<Evidence, boolean>
@@ -26,12 +33,12 @@ const initialState: State = {
 export const store = createContext<Readonly<Context>>({ state: initialState })
 
 type Action =
+  | { type: 'resetSelector'; value?: never }
   | { type: 'setConfirmed'; value: [Evidence, boolean] }
   | { type: 'setRuledOut'; value: [Evidence, boolean] }
-  | { type: 'resetSelector'; value?: void }
   | { type: 'setSelectedGhost'; value: GhostType }
 
-export const Provider: FC = ({ children }) => {
+export const Provider: FC<PropsWithChildren> = ({ children }) => {
   const [state, dispatch] = useReducer<Reducer<State, Action>>(
     (previousState, action) => {
       switch (action.type) {
@@ -61,7 +68,7 @@ export const Provider: FC = ({ children }) => {
           throw new Error('Invalid Action')
       }
     },
-    initialState
+    initialState,
   )
 
   const value = useMemo(() => ({ state, dispatch }), [state, dispatch])
@@ -71,7 +78,7 @@ export const Provider: FC = ({ children }) => {
 const setEvidence: (
   previous: Map<Evidence, boolean>,
   type: Evidence,
-  value: boolean
+  value: boolean,
 ) => Map<Evidence, boolean> = (previous, type, value) => {
   const clone = new Map(previous.entries())
   clone.set(type, value)

@@ -1,10 +1,9 @@
 import clsx from 'clsx'
 import { useCallback, useMemo } from 'react'
 import type { FC } from 'react'
-import { Evidence } from '~data/evidence'
-import { GhostState } from '~hooks/useData'
-import type { Row as RowProps } from '~hooks/useData'
-import { useStore } from '~hooks/useStore'
+import { Evidence } from '~/lib/data/evidence'
+import { GhostState, type Row as RowProps } from '~/lib/hooks/useData'
+import { useStore } from '~/lib/hooks/useStore'
 
 export const Row: FC<RowProps> = ({ type, evidence, state }) => {
   const { dispatch } = useStore()
@@ -14,18 +13,18 @@ export const Row: FC<RowProps> = ({ type, evidence, state }) => {
 
   const isDisabled = useMemo<boolean>(
     () => state === GhostState.DISABLED,
-    [state]
+    [state],
   )
 
   return (
     <tr
       className={clsx(
-        'text-center bg-gray-700 border-b last:border-b-0 border-gray-900 border-opacity-50 motion-safe:transition-all',
-        isDisabled && 'bg-opacity-20 text-white text-opacity-50'
+        'border-b border-zinc-900 border-opacity-50 bg-zinc-700 text-center last:border-b-0 motion-safe:transition-all',
+        isDisabled && 'bg-opacity-20 text-white text-opacity-50',
       )}
     >
       <td
-        className='font-semibold text-left hover:bg-gray-600 cursor-pointer px-3 py-[5px] border-r border-gray-900 border-opacity-50 hover:border-opacity-70'
+        className='cursor-pointer border-r border-zinc-900 border-opacity-50 px-3 py-[5px] text-left font-semibold hover:border-opacity-70 hover:bg-zinc-600'
         onClick={onClick}
       >
         {type}
@@ -33,12 +32,12 @@ export const Row: FC<RowProps> = ({ type, evidence, state }) => {
 
       {Object.entries(Evidence).map(([key, ev]) => (
         <td
-          key={key}
           className={clsx(
-            'text-sm border-l border-gray-900 border-opacity-50 hidden',
+            'hidden border-l border-zinc-900 border-opacity-50 text-sm',
             evidence.includes(ev) && 'md:table-cell',
-            !evidence.includes(ev) && 'lg:table-cell'
+            !evidence.includes(ev) && 'lg:table-cell',
           )}
+          key={key}
         >
           {evidence.includes(ev) ? ev : ''}
         </td>

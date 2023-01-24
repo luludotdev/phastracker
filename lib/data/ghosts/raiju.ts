@@ -1,7 +1,7 @@
-import { Evidence } from '~data/evidence'
-import type { Ghost } from '.'
+import { Evidence } from '~/lib/data/evidence'
+import type { Ghost } from '~/lib/data/ghosts'
 
-export const raiju: Readonly<Ghost> = {
+export const raiju: Ghost = {
   evidence: [Evidence.EMF_5, Evidence.ORBS, Evidence.DOTS],
   description:
     'The Raiju is a demon that thrives on electrical current. ' +

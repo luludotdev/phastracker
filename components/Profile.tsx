@@ -1,8 +1,6 @@
-import { useMemo } from 'react'
-import type { FC } from 'react'
-import { ghosts } from '~data/ghosts'
-import type { Ghost } from '~data/ghosts'
-import { useStore } from '~hooks/useStore'
+import { type FC, useMemo } from 'react'
+import { type Ghost, ghosts } from '~/lib/data/ghosts'
+import { useStore } from '~/lib/hooks/useStore'
 
 export const Profile: FC = () => {
   const { state } = useStore()
@@ -15,9 +13,9 @@ export const Profile: FC = () => {
 
   return (
     <div>
-      <Entry title={state.selected} body={ghost.description} />
-      <Entry title='Strength' body={ghost.strength} />
-      <Entry title='Weakness' body={ghost.weakness} />
+      <Entry body={ghost.description} title={state.selected} />
+      <Entry body={ghost.strength} title='Strength' />
+      <Entry body={ghost.weakness} title='Weakness' />
     </div>
   )
 }
@@ -30,7 +28,7 @@ interface Props {
 
 const Entry: FC<Props> = ({ title, body }) => (
   <div className='mb-5 last:mb-0'>
-    <h2 className='font-semibold text-2xl mb-[2px]'>{title}</h2>
+    <h2 className='mb-[2px] text-2xl font-semibold'>{title}</h2>
     <p>{body}</p>
   </div>
 )

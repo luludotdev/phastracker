@@ -11,7 +11,7 @@ interface OptionalProps {
   colour: string
 }
 
-export const Meta: FC<RequiredProps & Partial<OptionalProps>> = ({
+export const Meta: FC<Partial<OptionalProps> & RequiredProps> = ({
   siteName,
   description,
   image,
@@ -20,12 +20,12 @@ export const Meta: FC<RequiredProps & Partial<OptionalProps>> = ({
   <Head>
     <title>{siteName}</title>
 
-    <meta property='og:type' content='website' />
-    <meta property='og:title' content={siteName} />
+    <meta content='website' property='og:type' />
+    <meta content={siteName} property='og:title' />
 
-    {description && <meta property='og:description' content={description} />}
-    {image && <meta property='og:image' content={image} />}
-    {description && <meta name='description' content={description} />}
-    {colour && <meta name='theme-color' content={colour} />}
+    {description && <meta content={description} property='og:description' />}
+    {image && <meta content={image} property='og:image' />}
+    {description && <meta content={description} name='description' />}
+    {colour && <meta content={colour} name='theme-color' />}
   </Head>
 )

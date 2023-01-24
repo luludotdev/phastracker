@@ -1,7 +1,6 @@
-import { Evidence } from '~data/evidence'
-import { ghosts } from '~data/ghosts'
-import type { Ghost, GhostType } from '~data/ghosts'
-import { useStore } from './useStore'
+import { Evidence } from '~/lib/data/evidence'
+import { type Ghost, ghosts, type GhostType } from '~/lib/data/ghosts'
+import { useStore } from '~/lib/hooks/useStore'
 
 export enum GhostState {
   NONE,

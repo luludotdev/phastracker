@@ -1,6 +1,6 @@
 import Error from 'next/error'
 import type { FC } from 'react'
-import { ErrorContainer } from '~components/ErrorContainer'
+import { ErrorContainer } from '~/components/ErrorContainer'
 
 const Error404: FC = () => (
   <ErrorContainer>

@@ -1,7 +1,7 @@
-import { Evidence } from '~data/evidence'
-import type { Ghost } from '.'
+import { Evidence } from '~/lib/data/evidence'
+import type { Ghost } from '~/lib/data/ghosts'
 
-export const goryo: Readonly<Ghost> = {
+export const goryo: Ghost = {
   evidence: [Evidence.EMF_5, Evidence.FINGERPRINTS, Evidence.DOTS],
   description:
     'Using a video camera is the only way to view a Goryo, ' +

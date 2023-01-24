@@ -1,7 +1,7 @@
-import { Evidence } from '~data/evidence'
-import type { Ghost } from '.'
+import { Evidence } from '~/lib/data/evidence'
+import type { Ghost } from '~/lib/data/ghosts'
 
-export const jinn: Readonly<Ghost> = {
+export const jinn: Ghost = {
   evidence: [Evidence.EMF_5, Evidence.FINGERPRINTS, Evidence.FREEZING],
   description:
     'The Jinn is a territorial ghost that will attack when threatened. ' +

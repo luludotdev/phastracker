@@ -1,5 +1,4 @@
-import { useCallback } from 'react'
-import type { ChangeEventHandler, FC } from 'react'
+import { type ChangeEventHandler, type FC, useCallback } from 'react'
 
 interface Props {
   checked: boolean
@@ -13,16 +12,16 @@ export const Checkbox: FC<Props> = ({ checked, disabled, onChange }) => {
     ev => {
       if (typeof onChange === 'function') onChange(ev)
     },
-    [onChange]
+    [onChange],
   )
 
   return (
     <input
-      className='form-checkbox rounded cursor-pointer disabled:opacity-30 disabled:cursor-default motion-safe:transition-all'
-      type='checkbox'
       checked={checked}
+      className='form-checkbox cursor-pointer rounded !outline-none !ring-0 !ring-offset-0 disabled:cursor-default disabled:opacity-30 motion-safe:transition-all'
       disabled={disabled}
       onChange={handleChange}
+      type='checkbox'
     />
   )
 }

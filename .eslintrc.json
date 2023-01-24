@@ -1,0 +1,21 @@
+{
+  "root": true,
+  "extends": [
+    "@lolpants/eslint-config/common",
+    "@lolpants/eslint-config/node",
+    "@lolpants/eslint-config/typescript",
+    "@lolpants/eslint-config/react",
+    "@lolpants/eslint-config/next",
+    "@lolpants/eslint-config/prettier"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.eslint.json"
+  },
+  "rules": {
+    "@next/next/no-img-element": "off"
+  },
+  "ignorePatterns": ["**/build/*"],
+  "env": {
+    "jest": true
+  }
+}
