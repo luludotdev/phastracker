@@ -1,34 +1,33 @@
 {
   "name": "phastracker",
-  "version": "0.1.0",
   "private": true,
   "packageManager": "yarn@3.3.1",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "xo",
+    "lint": "prettier --check . && eslint components lib pages --ext mjs,js,ts,tsx",
+    "format": "prettier --write . && eslint components lib pages --ext mjs,js,ts,tsx --fix",
+    "fmt": "yarn run format",
     "test": "yarn run lint"
   },
   "dependencies": {
-    "clsx": "^1.1.1",
-    "next": "12.0.7",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "clsx": "^1.2.1",
+    "next": "13.1.5"
   },
   "devDependencies": {
-    "@tailwindcss/custom-forms": "^0.2.1",
-    "@types/node": "^16.11.12",
-    "@types/react": "^17.0.37",
-    "@types/tailwindcss": "^2.2.4",
-    "autoprefixer": "^10.4.0",
-    "eslint-config-next": "^12.0.7",
-    "eslint-config-xo-react": "^0.25.0",
-    "eslint-plugin-react": "^7.27.1",
-    "eslint-plugin-react-hooks": "^4.3.0",
-    "postcss": "^8.4.4",
-    "tailwindcss": "^2.2.19",
-    "typescript": "^4.5.2",
-    "xo": "^0.47.0"
+    "@lolpants/eslint-config": "^0.3.0",
+    "@types/node": "^18.11.18",
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "autoprefixer": "^10.4.13",
+    "eslint": "^8.32.0",
+    "postcss": "^8.4.21",
+    "prettier": "^2.8.3",
+    "prettier-plugin-tailwindcss": "^0.2.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwindcss": "^3.2.4",
+    "typescript": "^4.9.4"
   }
 }
