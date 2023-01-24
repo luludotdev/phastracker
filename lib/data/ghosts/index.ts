@@ -1,9 +1,12 @@
 import { banshee } from './banshee'
 import { demon } from './demon'
+import { deogen } from './deogen'
 import { goryo } from './goryo'
 import { hantu } from './hantu'
 import { jinn } from './jinn'
 import { mare } from './mare'
+import { mimic } from './mimic'
+import { moroi } from './moroi'
 import { myling } from './myling'
 import { obake } from './obake'
 import { oni } from './oni'
@@ -14,6 +17,7 @@ import { raiju } from './raiju'
 import { revenant } from './revenant'
 import { shade } from './shade'
 import { spirit } from './spirit'
+import { thaye } from './thaye'
 import { twins } from './twins'
 import { wraith } from './wraith'
 import { yokai } from './yokai'
@@ -23,10 +27,13 @@ import type { Evidence } from '~/lib/data/evidence'
 export enum GhostType {
   BANSHEE = 'Banshee',
   DEMON = 'Demon',
+  DEOGEN = 'Deogen',
   GORYO = 'Goryo',
   HANTU = 'Hantu',
   JINN = 'Jinn',
   MARE = 'Mare',
+  MIMIC = 'Mimic',
+  MOROI = 'Moroi',
   MYLING = 'Myling',
   OBAKE = 'Obake',
   ONI = 'Oni',
@@ -37,6 +44,7 @@ export enum GhostType {
   REVENANT = 'Revenant',
   SHADE = 'Shade',
   SPIRIT = 'Spirit',
+  THAYE = 'Thaye',
   TWINS = 'The Twins',
   WRAITH = 'Wraith',
   YOKAI = 'Yokai',
@@ -73,4 +81,8 @@ export const ghosts: GhostMap = {
   [GhostType.TWINS]: twins,
   [GhostType.RAIJU]: raiju,
   [GhostType.OBAKE]: obake,
+  [GhostType.MIMIC]: mimic,
+  [GhostType.MOROI]: moroi,
+  [GhostType.DEOGEN]: deogen,
+  [GhostType.THAYE]: thaye,
 }
